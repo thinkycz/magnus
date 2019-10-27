@@ -17,6 +17,9 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
+            $table->timestamp('paid_at')->nullable();
+            $table->string('status')->nullable();
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
