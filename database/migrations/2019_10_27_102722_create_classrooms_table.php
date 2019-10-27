@@ -13,15 +13,15 @@ class CreateClassroomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lessons', function (Blueprint $table) {
+        Schema::create('classrooms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->timestamp('starts_at');
-            $table->timestamp('ends_at');
+            $table->timestamp('starts_at')->nullable();
+            $table->timestamp('ends_at')->nullable();
             $table->string('frequency')->default('weekly');
 
-            $table->unsignedInteger('course_id');
+            $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
@@ -33,6 +33,6 @@ class CreateClassroomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lessons');
+        Schema::dropIfExists('classrooms');
     }
 }

@@ -17,10 +17,10 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->unsignedInteger('course_id');
+            $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }

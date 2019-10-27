@@ -17,10 +17,10 @@ class CreateAttendancesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->unsignedInteger('lesson_id');
+            $table->unsignedBigInteger('lesson_id');
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
         });
     }

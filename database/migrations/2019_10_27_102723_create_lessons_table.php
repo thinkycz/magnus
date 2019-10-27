@@ -17,10 +17,10 @@ class CreateLessonsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->timestamp('starts_at');
-            $table->timestamp('ends_at');
+            $table->timestamp('starts_at')->nullable();
+            $table->timestamp('ends_at')->nullable();
 
-            $table->unsignedInteger('classroom_id');
+            $table->unsignedBigInteger('classroom_id');
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');
         });
     }

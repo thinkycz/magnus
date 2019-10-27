@@ -19,10 +19,10 @@ class CreateNotesTable extends Migration
 
             $table->longText('content');
 
-            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
 
-            $table->unsignedInteger('notable_id')->index();
+            $table->unsignedBigInteger('notable_id')->index();
             $table->string('notable_type')->index();
         });
     }
