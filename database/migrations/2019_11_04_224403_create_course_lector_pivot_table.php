@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClassroomsTable extends Migration
+class CreateCourseLectorPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateClassroomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('classrooms', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-
-            $table->dateTime('starts_at');
-            $table->integer('duration_minutes')->default(45);
-            $table->integer('frequency_days')->default(7);
-
-            $table->unsignedBigInteger('course_id');
+        Schema::create('course_lector', function (Blueprint $table) {
+            $table->bigInteger('course_id')->unsigned()->index();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->bigInteger('lector_id')->unsigned()->index();
+            $table->foreign('lector_id')->references('id')->on('lectors')->onDelete('cascade');
+            $table->primary(['course_id', 'lector_id']);
         });
     }
 
@@ -33,6 +29,6 @@ class CreateClassroomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classrooms');
+        Schema::dropIfExists('course_lector');
     }
 }

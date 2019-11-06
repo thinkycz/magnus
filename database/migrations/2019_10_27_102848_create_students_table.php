@@ -17,14 +17,19 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->timestamp('paid_at')->nullable();
-            $table->string('status')->nullable();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('school');
+            $table->string('hobbies');
+            $table->string('origin');
+            $table->string('parent_name');
+            $table->string('parent_phone');
+            $table->dateTime('birth_date');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-            $table->unsignedBigInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
 

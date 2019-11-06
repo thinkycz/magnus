@@ -5,19 +5,18 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Classroom extends Resource
+class Lector extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Classroom::class;
+    public static $model = \App\Lector::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -25,8 +24,6 @@ class Classroom extends Resource
      * @var string
      */
     public static $title = 'id';
-
-    public static $displayInNavigation = false;
 
     /**
      * The columns that should be searched.
@@ -48,15 +45,23 @@ class Classroom extends Resource
         return [
             ID::make()->sortable(),
 
-            DateTime::make('Starts At'),
+            Text::make('First Name'),
 
-            DateTime::make('Ends At'),
+            Text::make('Last Name'),
 
-            Text::make('Frequency'),
+            Text::make('Address'),
 
-            BelongsTo::make('Course'),
+            Text::make('Phone'),
 
-            HasMany::make('Lessons'),
+            Text::make('Past Experience'),
+
+            Text::make('Teaches Subjects'),
+
+            Text::make('Available Days'),
+
+            DateTime::make('Birth Date'),
+
+            BelongsTo::make('User')
         ];
     }
 

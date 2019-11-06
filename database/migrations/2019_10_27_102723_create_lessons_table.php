@@ -17,8 +17,8 @@ class CreateLessonsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->timestamp('starts_at')->nullable();
-            $table->timestamp('ends_at')->nullable();
+            $table->dateTime('starts_at');
+            $table->dateTime('ends_at');
 
             $table->unsignedBigInteger('classroom_id');
             $table->foreign('classroom_id')->references('id')->on('classrooms')->onDelete('cascade');

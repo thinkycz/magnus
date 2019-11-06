@@ -17,11 +17,17 @@ class CreateLectorsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('past_experience');
+            $table->string('teaches_subjects');
+            $table->string('available_days');
+            $table->dateTime('birth_date');
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-            $table->unsignedBigInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
 

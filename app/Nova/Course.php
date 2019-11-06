@@ -4,10 +4,10 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -19,23 +19,21 @@ class Course extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Course';
+    public static $model = \App\Course::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
      *
      * @var array
      */
-    public static $search = [
-        'id',
-    ];
+    public static $search = ['name', 'description'];
 
     /**
      * Get the fields displayed by the resource.
@@ -52,17 +50,11 @@ class Course extends Resource
 
             Trix::make('Description'),
 
-            Number::make('Price'),
+            Currency::make('Price')->format('%.2n' . ' Kč'),
 
-            BelongsToMany::make('Students', 'students', User::class)->fields(function () {
-                return [
-                    DateTime::make('Paid At'),
-                    Text::make('Status'),
-                ];
-            }),
+            BelongsToMany::make('Students', 'students', User::class),
 
             BelongsToMany::make('Lectors', 'lectors', User::class),
-
 
             HasMany::make('Classrooms'),
         ];

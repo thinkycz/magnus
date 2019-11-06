@@ -37,23 +37,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function lector()
+    {
+        return $this->hasOne(Lector::class);
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
     public function notes()
     {
         return $this->morphMany(Note::class, 'notable');
-    }
-
-    public function attendedLessons()
-    {
-        return $this->belongsToMany(Lesson::class, 'attendances');
-    }
-
-    public function studiedCourses()
-    {
-        return $this->belongsToMany(Course::class, 'students');
-    }
-
-    public function lecturedCourses()
-    {
-        return $this->belongsToMany(Course::class, 'lectors');
     }
 }

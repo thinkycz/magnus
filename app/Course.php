@@ -6,14 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    protected $dates = ['starts_at', 'ends_at'];
+
     public function students()
     {
-        return $this->belongsToMany(User::class, 'students');
+        return $this->belongsToMany(Student::class);
     }
 
     public function lectors()
     {
-        return $this->belongsToMany(User::class, 'lectors');
+        return $this->belongsToMany(Lector::class);
     }
 
     public function classrooms()

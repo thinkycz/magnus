@@ -3,9 +3,11 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -16,7 +18,7 @@ class Note extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Note';
+    public static $model = \App\Note::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -48,6 +50,10 @@ class Note extends Resource
             ID::make()->sortable(),
 
             Trix::make('Content'),
+
+            Text::make('Excerpt', function () {
+                return Str::limit(strip_tags($this->content), 50);
+            })->onlyOnIndex(),
 
             BelongsTo::make('Author', 'author', User::class),
         ];

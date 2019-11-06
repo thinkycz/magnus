@@ -2,7 +2,7 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphMany;
@@ -17,7 +17,7 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = 'App\\User';
+    public static $model = \App\User::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -65,11 +65,9 @@ class User extends Resource
 
             MorphMany::make('Notes'),
 
-            BelongsToMany::make('Attended Lessons', 'attendedLessons', Lesson::class),
+            HasOne::make('Lector Profile', 'Lector', Lector::class),
 
-            BelongsToMany::make('Studied Courses', 'studiedCourses', Course::class),
-
-            BelongsToMany::make('Lectured Courses', 'lecturedCourses', Course::class),
+            HasOne::make('Student Profile', 'Student', Student::class),
         ];
     }
 

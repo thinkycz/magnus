@@ -21,6 +21,9 @@ class CreateCoursesTable extends Migration
             $table->text('description');
             $table->decimal('price')->nullable();
             $table->timestamp('archived_at')->nullable();
+
+            $table->date('starts_at')->nullable();
+            $table->date('ends_at')->nullable();
         });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classroom extends Model
 {
-    protected $dates = ['starts_at', 'ends_at'];
+    protected $dates = ['starts_at'];
 
     public function course()
     {

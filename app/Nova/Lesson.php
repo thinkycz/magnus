@@ -17,7 +17,7 @@ class Lesson extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Lesson';
+    public static $model = \App\Lesson::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -25,6 +25,8 @@ class Lesson extends Resource
      * @var string
      */
     public static $title = 'id';
+
+    public static $group = 'Overview';
 
     /**
      * The columns that should be searched.
