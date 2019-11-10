@@ -8,6 +8,7 @@ class Lesson extends Model
 {
     protected $fillable = ['starts_at', 'ends_at'];
     protected $dates = ['starts_at', 'ends_at'];
+    protected $appends = ['title'];
 
     public function classroom()
     {

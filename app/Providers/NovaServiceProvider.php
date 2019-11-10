@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\NewLectors;
+use App\Nova\Metrics\NewLessons;
+use App\Nova\Metrics\NewStudents;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -56,6 +59,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
+            new NewLessons(),
+            new NewStudents(),
+            new NewLectors(),
             new Agenda(),
         ];
     }

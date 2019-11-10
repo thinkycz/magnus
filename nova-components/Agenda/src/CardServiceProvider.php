@@ -38,7 +38,7 @@ class CardServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/agenda')
+                ->prefix('magnus/agenda')
                 ->group(__DIR__.'/../routes/api.php');
     }
 

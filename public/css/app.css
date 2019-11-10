@@ -1,0 +1,7 @@
+.child-flex > *,
+.flex {
+  -webkit-box-flex: inherit !important;
+          flex: inherit !important;
+  max-width: 100%;
+}
+

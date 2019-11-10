@@ -1,24 +1,58 @@
 <template>
-    <card class="flex flex-col items-center justify-center">
-        <div class="px-3 py-3">
-            <h1 class="text-center text-3xl text-80 font-light">Agenda</h1>
-        </div>
+    <card class="flex flex-col items-center justify-center" style="min-height: 300px">
+        <calendar>
+            <ul class="" slot="dateCellRender" slot-scope="value">
+                <li v-for="event in getDayEvents(value)" :key="event.id">
+                    {{ event.title }}
+                </li>
+            </ul>
+        </calendar>
     </card>
 </template>
 
 <script>
-export default {
-    props: [
-        'card',
+    import {Antd, Calendar} from 'ant-design-vue';
+    import 'ant-design-vue/lib/calendar/style/index.css';
+    import 'ant-design-vue/lib/select/style/index.css';
+    import 'ant-design-vue/lib/radio/style/index.css';
 
-        // The following props are only available on resource detail cards...
-        // 'resource',
-        // 'resourceId',
-        // 'resourceName',
-    ],
+    export default {
+        props: [
+            'card',
+        ],
 
-    mounted() {
-        //
-    },
-}
+        data() {
+            return {
+                events: null
+            }
+        },
+
+        methods: {
+            getDayEvents(calendar_date) {
+                let dayEvents = [];
+
+                if (this.events) {
+                    this.events.forEach((event) => {
+                        let event_date = moment(event.starts_at);
+
+                        if (moment(event_date).isSame(calendar_date, 'day')) {
+                            dayEvents.push(event)
+                        }
+                    })
+                }
+
+                return dayEvents
+            }
+        },
+
+        mounted() {
+            axios.get('/magnus/agenda/events').then(response => {
+                this.events = response.data
+            });
+        },
+
+        components: {
+            Calendar
+        }
+    }
 </script>

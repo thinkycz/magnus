@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+ Route::get('/events', function (Request $request) {
+     return \App\Lesson::all();
+ });
