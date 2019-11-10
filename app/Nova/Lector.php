@@ -6,6 +6,7 @@ use App\Nova\Metrics\LectorsOverTime;
 use App\Nova\Metrics\NewLectors;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -59,7 +60,8 @@ class Lector extends Resource
                 ->rules('required'),
 
             Text::make('Address')
-                ->rules('required'),
+                ->rules('required')
+                ->hideFromIndex(),
 
             Text::make('Past Experience')
                 ->hideFromIndex(),
@@ -74,7 +76,11 @@ class Lector extends Resource
                 ->hideFromIndex(),
 
             BelongsTo::make('User')
-                ->nullable(),
+                ->nullable()
+                ->searchable(),
+
+            BelongsToMany::make('Courses')
+                ->searchable()
         ];
     }
 

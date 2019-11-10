@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Nova\Metrics\NewLectors;
 use App\Nova\Metrics\NewLessons;
 use App\Nova\Metrics\NewStudents;
+use App\User;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -44,10 +45,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function gate()
     {
-        Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+        Gate::define('viewNova', function (User $user) {
+            return $user->is_admin || $user->lector;
         });
     }
 

@@ -50,6 +50,7 @@ namespace App{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $is_admin
  * @property-read \App\Lector $lector
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Note[] $notes
  * @property-read int|null $notes_count
@@ -63,6 +64,7 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailVerifiedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereIsAdmin($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
@@ -120,6 +122,7 @@ namespace App{
  * @property int|null $user_id
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $courses
  * @property-read int|null $courses_count
+ * @property-read mixed $full_name
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Lesson[] $lessons
  * @property-read int|null $lessons_count
  * @property-read \App\User|null $user
@@ -199,6 +202,7 @@ namespace App{
  * @property int|null $user_id
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $courses
  * @property-read int|null $courses_count
+ * @property-read mixed $full_name
  * @property-read \App\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Lector newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Lector newQuery()

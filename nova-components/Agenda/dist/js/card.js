@@ -11064,7 +11064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             calendarPlugins: [__WEBPACK_IMPORTED_MODULE_1__fullcalendar_daygrid__["d" /* default */], __WEBPACK_IMPORTED_MODULE_2__fullcalendar_timegrid__["a" /* default */], __WEBPACK_IMPORTED_MODULE_3__fullcalendar_interaction__["a" /* default */]],
             calendarWeekends: true,
-            calendarEvents: [{ title: "Today", start: new Date() }]
+            calendarEvents: []
         };
     },
     mounted: function mounted() {
@@ -11074,8 +11074,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.events = response.data;
 
             if (_this.events) {
-                _this.calendarEvents = [];
-
                 _this.events.forEach(function (event) {
                     _this.calendarEvents.push({
                         title: event.title,

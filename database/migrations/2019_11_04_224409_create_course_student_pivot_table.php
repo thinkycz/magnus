@@ -20,7 +20,7 @@ class CreateCourseStudentPivotTable extends Migration
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->primary(['course_id', 'student_id']);
 
-            $table->timestamp('paid_at')->nullable();
+            $table->integer('paid_amount')->nullable();
             $table->string('status')->nullable();
         });
     }

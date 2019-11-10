@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Fields\SubscriptionFields;
 use App\Nova\Metrics\NewStudents;
 use App\Nova\Metrics\StudentsOverTime;
 use Illuminate\Http\Request;
@@ -42,7 +43,7 @@ class Student extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
@@ -60,7 +61,8 @@ class Student extends Resource
                 ->rules('required'),
 
             Text::make('Address')
-                ->rules('required'),
+                ->rules('required')
+                ->hideFromIndex(),
 
             Text::make('School')
                 ->hideFromIndex(),
@@ -81,16 +83,22 @@ class Student extends Resource
                 ->hideFromIndex(),
 
             BelongsTo::make('User')
-                ->nullable(),
+                ->nullable()
+                ->searchable(),
+
+            BelongsToMany::make('Courses')
+                ->fields(new SubscriptionFields())
+                ->searchable(),
 
             BelongsToMany::make('Lessons')
+                ->searchable()
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -104,7 +112,7 @@ class Student extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -115,7 +123,7 @@ class Student extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -126,7 +134,7 @@ class Student extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)

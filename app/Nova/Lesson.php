@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Metrics\LessonsOverTime;
 use App\Nova\Metrics\NewLessons;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -39,6 +40,19 @@ class Lesson extends Resource
     public static $search = [
         'id',
     ];
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->when(!auth()->user()->is_admin, function (Builder $query) {
+            return $query->whereHas('classroom', function (Builder $query) {
+                return $query->whereHas('course', function (Builder $query) {
+                    return $query->whereHas('lectors', function (Builder $query) {
+                        return $query->where('user_id', auth()->user()->id);
+                    });
+                });
+            });
+        });
+    }
 
     /**
      * Get the fields displayed by the resource.

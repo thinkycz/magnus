@@ -33,9 +33,7 @@
                     interactionPlugin
                 ],
                 calendarWeekends: true,
-                calendarEvents: [
-                    { title: "Today", start: new Date() }
-                ]
+                calendarEvents: []
             };
         },
 
@@ -44,8 +42,6 @@
                 this.events = response.data;
 
                 if (this.events) {
-                    this.calendarEvents = [];
-
                     this.events.forEach((event) => {
                         this.calendarEvents.push({
                             title: event.title,

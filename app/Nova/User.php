@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Metrics\NewUsers;
 use App\Nova\Metrics\UsersOverTime;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -33,9 +34,7 @@ class User extends Resource
      *
      * @var array
      */
-    public static $search = [
-        'id', 'name', 'email',
-    ];
+    public static $search = ['name', 'email'];
 
     /**
      * Get the fields displayed by the resource.
@@ -64,6 +63,8 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
+
+            Boolean::make('Is Admin'),
 
             MorphMany::make('Notes'),
 
