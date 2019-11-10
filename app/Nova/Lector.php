@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\LectorsOverTime;
 use App\Nova\Metrics\NewLectors;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -86,7 +87,8 @@ class Lector extends Resource
     public function cards(Request $request)
     {
         return [
-            new NewLectors()
+            new NewLectors(),
+            new LectorsOverTime()
         ];
     }
 

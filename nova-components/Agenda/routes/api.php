@@ -1,5 +1,6 @@
 <?php
 
+use App\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
  Route::get('/events', function (Request $request) {
-     return \App\Lesson::all();
+     return Lesson::whereBetween('starts_at', [now()->subYear()->toDateTimeString(), now()->addYear()->toDateTimeString()])->get();
  });

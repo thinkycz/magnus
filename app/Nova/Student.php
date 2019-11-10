@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Metrics\NewStudents;
+use App\Nova\Metrics\StudentsOverTime;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -95,7 +96,8 @@ class Student extends Resource
     public function cards(Request $request)
     {
         return [
-            new NewStudents()
+            new NewStudents(),
+            new StudentsOverTime()
         ];
     }
 

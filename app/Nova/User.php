@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Metrics\NewUsers;
+use App\Nova\Metrics\UsersOverTime;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -81,7 +82,8 @@ class User extends Resource
     public function cards(Request $request)
     {
         return [
-            new NewUsers()
+            new NewUsers(),
+            new UsersOverTime()
         ];
     }
 

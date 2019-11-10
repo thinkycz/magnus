@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\CoursesOverTime;
 use App\Nova\Metrics\NewCourses;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -104,7 +105,8 @@ class Course extends Resource
     public function cards(Request $request)
     {
         return [
-            new NewCourses()
+            new NewCourses(),
+            new CoursesOverTime()
         ];
     }
 
