@@ -5,11 +5,21 @@ namespace App\Policies;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class LessonPolicy
+class ClassroomPolicy
 {
     use HandlesAuthorization;
 
     public function view(User $user): bool
+    {
+        return true;
+    }
+
+    public function create(User $user): bool
+    {
+        return true;
+    }
+
+    public function delete(User $user): bool
     {
         return true;
     }

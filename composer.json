@@ -15,6 +15,7 @@
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.6",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laracasts/generators": "^1.1",
@@ -71,7 +72,10 @@
             "php artisan cache:clear",
             "php artisan config:clear",
             "php artisan view:clear",
-            "php artisan db:seed"
+            "php artisan db:seed",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:models",
+            "php artisan ide-helper:meta"
         ]
     }
 }

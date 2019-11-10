@@ -17,4 +17,14 @@ class Student extends Model
     {
         return $this->belongsToMany(Course::class);
     }
+
+    public function lessons()
+    {
+        return $this->belongsToMany(Lesson::class);
+    }
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

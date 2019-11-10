@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
@@ -35,7 +34,7 @@ class Note extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'content',
     ];
 
     /**
@@ -51,12 +50,18 @@ class Note extends Resource
 
             Trix::make('Content'),
 
-            Text::make('Excerpt', function () {
-                return Str::limit(strip_tags($this->content), 50);
-            })->onlyOnIndex(),
+            Text::make('Excerpt')->onlyOnIndex(),
 
-            BelongsTo::make('Author', 'author', User::class),
+            BelongsTo::make('Author', 'author', User::class)
+                ->exceptOnForms(),
         ];
+    }
+
+    public static function newModel()
+    {
+        $model = new static::$model;
+        $model->setAttribute('user_id', auth()->user()->id);
+        return $model;
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
@@ -14,5 +15,10 @@ class Note extends Model
     public function notable()
     {
         return $this->morphTo();
+    }
+
+    public function getExcerptAttribute()
+    {
+        return Str::limit(strip_tags($this->content), 50);
     }
 }

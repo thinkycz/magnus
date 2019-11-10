@@ -22,4 +22,9 @@ class Course extends Model
     {
         return $this->hasMany(Classroom::class);
     }
+
+    public function lessons()
+    {
+        return $this->hasManyThrough(Lesson::class, Classroom::class);
+    }
 }

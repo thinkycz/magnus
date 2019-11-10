@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Lesson extends Resource
@@ -48,15 +49,22 @@ class Lesson extends Resource
         return [
             ID::make()->sortable(),
 
-            DateTime::make('Starts At'),
-
-            DateTime::make('Ends At'),
-
             BelongsTo::make('Classroom'),
 
-            BelongsToMany::make('Attendees', 'attendees', User::class),
+            DateTime::make('Starts At')
+                ->format('D.M.Y HH:mm'),
 
-            MorphMany::make('Notes')
+            DateTime::make('Ends At')
+                ->format('D.M.Y HH:mm'),
+
+            BelongsToMany::make('Students')
+                ->searchable(),
+
+            MorphMany::make('Notes'),
+
+            Text::make('Number of Notes', function () {
+                return $this->notes->count();
+            })->onlyOnIndex(),
         ];
     }
 

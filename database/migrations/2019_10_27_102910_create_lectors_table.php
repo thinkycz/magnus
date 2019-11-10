@@ -19,14 +19,14 @@ class CreateLectorsTable extends Migration
 
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('address');
             $table->string('phone');
-            $table->string('past_experience');
-            $table->string('teaches_subjects');
-            $table->string('available_days');
-            $table->dateTime('birth_date');
+            $table->string('address');
+            $table->string('past_experience')->nullable();
+            $table->string('teaches_subjects')->nullable();
+            $table->string('available_days')->nullable();
+            $table->dateTime('birth_date')->nullable();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

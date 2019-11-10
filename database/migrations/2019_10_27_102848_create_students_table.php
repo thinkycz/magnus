@@ -19,16 +19,16 @@ class CreateStudentsTable extends Migration
 
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('address');
             $table->string('phone');
-            $table->string('school');
-            $table->string('hobbies');
-            $table->string('origin');
-            $table->string('parent_name');
-            $table->string('parent_phone');
-            $table->dateTime('birth_date');
+            $table->string('address');
+            $table->string('school')->nullable();
+            $table->string('hobbies')->nullable();
+            $table->string('origin')->nullable();
+            $table->string('parent_name')->nullable();
+            $table->string('parent_phone')->nullable();
+            $table->dateTime('birth_date')->nullable();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

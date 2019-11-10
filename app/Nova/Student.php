@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Metrics\NewStudents;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -24,7 +25,7 @@ class Student extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'full_name';
 
     /**
      * The columns that should be searched.
@@ -32,8 +33,10 @@ class Student extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'first_name', 'last_name', 'phone', 'parent_name', 'parent_phone'
     ];
+
+    public static $group = 'Admin';
 
     /**
      * Get the fields displayed by the resource.
@@ -46,27 +49,40 @@ class Student extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('First Name'),
+            Text::make('First Name')
+                ->rules('required'),
 
-            Text::make('Last Name'),
+            Text::make('Last Name')
+                ->rules('required'),
 
-            Text::make('Address'),
+            Text::make('Phone')
+                ->rules('required'),
 
-            Text::make('Phone'),
+            Text::make('Address')
+                ->rules('required'),
 
-            Text::make('School'),
+            Text::make('School')
+                ->hideFromIndex(),
 
-            Text::make('Hobbies'),
+            Text::make('Hobbies')
+                ->hideFromIndex(),
 
-            Text::make('Origin'),
+            Text::make('Origin')
+                ->hideFromIndex(),
 
-            Text::make('Parent Name'),
+            Text::make('Parent Name')
+                ->hideFromIndex(),
 
-            Text::make('Parent Phone'),
+            Text::make('Parent Phone')
+                ->hideFromIndex(),
 
-            DateTime::make('Birth Date'),
+            DateTime::make('Birth Date')
+                ->hideFromIndex(),
 
             BelongsTo::make('User')
+                ->nullable(),
+
+            BelongsToMany::make('Lessons')
         ];
     }
 

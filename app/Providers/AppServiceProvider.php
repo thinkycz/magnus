@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Classroom;
+use App\Observers\ClassroomObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Classroom::observe(ClassroomObserver::class);
     }
 }

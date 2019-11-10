@@ -25,7 +25,7 @@ class Classroom extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     public static $displayInNavigation = false;
 
@@ -49,16 +49,33 @@ class Classroom extends Resource
         return [
             ID::make()->sortable(),
 
-            DateTime::make('Starts At'),
+            DateTime::make('Starts At')
+                ->rules('required')
+                ->format('D.M.Y HH:mm'),
 
-            Number::make('Duration Minutes'),
+            Number::make('Duration Minutes')
+                ->rules('required'),
 
-            Number::make('Frequency Days'),
+            Number::make('Frequency Days')
+                ->rules('required'),
+
+            Text::make('Number of Lessons', function () {
+                return $this->lessons->count();
+            })->onlyOnIndex(),
 
             BelongsTo::make('Course'),
 
             HasMany::make('Lessons'),
         ];
+    }
+
+    public static function newModel()
+    {
+        $model = new static::$model;
+        $model->setAttribute('starts_at', now());
+        $model->setAttribute('duration_minutes', 90);
+        $model->setAttribute('frequency_days', 7);
+        return $model;
     }
 
     /**
