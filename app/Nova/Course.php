@@ -2,9 +2,11 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NewCourses;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -52,6 +54,10 @@ class Course extends Resource
 
             Currency::make('Price')->format('%.2n' . ' Kč'),
 
+            Date::make('Starts At'),
+
+            Date::make('Ends At'),
+
             BelongsToMany::make('Students', 'students', User::class),
 
             BelongsToMany::make('Lectors', 'lectors', User::class),
@@ -68,7 +74,9 @@ class Course extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new NewCourses()
+        ];
     }
 
     /**

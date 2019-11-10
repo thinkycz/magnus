@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NewLectors;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
@@ -73,7 +74,9 @@ class Lector extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new NewLectors()
+        ];
     }
 
     /**

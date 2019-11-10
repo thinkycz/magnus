@@ -18,7 +18,7 @@ class CreateClassroomsTable extends Migration
             $table->timestamps();
 
             $table->dateTime('starts_at');
-            $table->integer('duration_minutes')->default(45);
+            $table->integer('duration_minutes')->default(90);
             $table->integer('frequency_days')->default(7);
 
             $table->unsignedBigInteger('course_id');

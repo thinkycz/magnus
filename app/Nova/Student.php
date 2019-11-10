@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NewStudents;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
@@ -77,7 +78,9 @@ class Student extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new NewStudents()
+        ];
     }
 
     /**
