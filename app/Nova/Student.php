@@ -38,7 +38,7 @@ class Student extends Resource
      * @var array
      */
     public static $search = [
-        'first_name', 'last_name', 'phone', 'parent_name', 'parent_phone'
+        'nickname', 'first_name', 'last_name', 'phone', 'parent_name', 'parent_phone'
     ];
 
     public static $group = 'Admin';
