@@ -46,7 +46,8 @@
                         this.calendarEvents.push({
                             title: event.title,
                             start: event.starts_at,
-                            end: event.ends_at
+                            end: event.ends_at,
+                            url: event.url
                         })
                     })
                 }

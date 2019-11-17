@@ -11078,7 +11078,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     _this.calendarEvents.push({
                         title: event.title,
                         start: event.starts_at,
-                        end: event.ends_at
+                        end: event.ends_at,
+                        url: event.url
                     });
                 });
             }
