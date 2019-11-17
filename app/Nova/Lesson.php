@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\PastLessons;
 use App\Nova\Metrics\LessonsOverTime;
 use App\Nova\Metrics\NewLessons;
 use Illuminate\Database\Eloquent\Builder;
@@ -102,7 +103,9 @@ class Lesson extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new PastLessons()
+        ];
     }
 
     /**
