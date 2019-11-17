@@ -51,7 +51,8 @@ class Classroom extends Resource
 
             DateTime::make('Starts At')
                 ->rules('required')
-                ->format('D.M.Y HH:mm'),
+                ->format('D.M.Y HH:mm')
+                ->hideWhenUpdating(),
 
             Number::make('Duration Minutes')
                 ->rules('required'),

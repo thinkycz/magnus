@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Fields\SubscriptionFields;
 use App\Nova\Metrics\NewStudents;
 use App\Nova\Metrics\StudentsOverTime;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -41,6 +42,17 @@ class Student extends Resource
 
     public static $group = 'Admin';
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->when(!auth()->user()->is_admin, function (Builder $query) {
+            return $query->whereHas('courses', function (Builder $query) {
+                return $query->whereHas('lectors', function (Builder $query) {
+                    return $query->where('lectors.user_id', auth()->user()->id);
+                });
+            });
+        });
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -50,15 +62,16 @@ class Student extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
-            Text::make('Nickname'),
+            Text::make('Nickname')
+                ->sortable(),
 
             Text::make('First Name')
-                ->rules('required'),
+                ->rules('required')
+                ->sortable(),
 
             Text::make('Last Name')
-                ->rules('required'),
+                ->rules('required')
+                ->sortable(),
 
             Text::make('Phone')
                 ->rules('required'),

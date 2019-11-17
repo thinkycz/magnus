@@ -28,50 +28,46 @@ class Lesson extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     public static $group = 'Overview';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
-
     public static function indexQuery(NovaRequest $request, $query)
     {
-        return $query->when(!auth()->user()->is_admin, function (Builder $query) {
-            return $query->whereHas('classroom', function (Builder $query) {
-                return $query->whereHas('course', function (Builder $query) {
-                    return $query->whereHas('lectors', function (Builder $query) {
-                        return $query->where('user_id', auth()->user()->id);
+        return $query
+            ->when(empty($request->get('orderBy')), function (Builder $query) {
+                $query->getQuery()->orders = [];
+                $query->orderBy('starts_at');
+            })
+            ->when(!auth()->user()->is_admin, function (Builder $query) {
+                return $query->whereHas('classroom', function (Builder $query) {
+                    return $query->whereHas('course', function (Builder $query) {
+                        return $query->whereHas('lectors', function (Builder $query) {
+                            return $query->where('user_id', auth()->user()->id);
+                        });
                     });
                 });
             });
-        });
     }
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             BelongsTo::make('Classroom'),
 
             DateTime::make('Starts At')
-                ->format('D.M.Y HH:mm'),
+                ->format('D.M.Y HH:mm')
+                ->sortable(),
 
             DateTime::make('Ends At')
-                ->format('D.M.Y HH:mm'),
+                ->format('D.M.Y HH:mm')
+                ->sortable(),
 
             BelongsToMany::make('Students')
                 ->searchable(),
@@ -87,7 +83,7 @@ class Lesson extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -101,7 +97,7 @@ class Lesson extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -112,7 +108,7 @@ class Lesson extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -123,7 +119,7 @@ class Lesson extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)

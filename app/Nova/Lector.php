@@ -48,13 +48,13 @@ class Lector extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             Text::make('First Name')
-                ->rules('required'),
+                ->rules('required')
+                ->sortable(),
 
             Text::make('Last Name')
-                ->rules('required'),
+                ->rules('required')
+                ->sortable(),
 
             Text::make('Phone')
                 ->rules('required'),

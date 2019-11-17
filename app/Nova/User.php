@@ -45,19 +45,17 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             Gravatar::make(),
 
             Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->sortable(),
 
             Text::make('Email')
-                ->sortable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                ->updateRules('unique:users,email,{{resourceId}}')
+                ->sortable(),
 
             Password::make('Password')
                 ->onlyOnForms()

@@ -59,10 +59,9 @@ class Course extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             Text::make('Name')
-                ->rules('required'),
+                ->rules('required')
+                ->sortable(),
 
             Trix::make('Description')
                 ->rules('required'),
@@ -70,15 +69,18 @@ class Course extends Resource
             Date::make('Starts At')
                 ->rules('required')
                 ->format('D.M.Y')
-                ->hideWhenUpdating(),
+                ->hideWhenUpdating()
+                ->sortable(),
 
             Date::make('Ends At')
                 ->rules('required', 'after_or_equal:starts_at')
                 ->format('D.M.Y')
-                ->hideWhenUpdating(),
+                ->hideWhenUpdating()
+                ->sortable(),
 
             Currency::make('Price')
-                ->format('%.2n' . ' Kč'),
+                ->format('%.2n' . ' Kč')
+                ->sortable(),
 
             Text::make('Number of Classrooms', function () {
                 return $this->classrooms->count();
@@ -104,7 +106,7 @@ class Course extends Resource
         $model = new static::$model;
         $model->setAttribute('price', 0);
         $model->setAttribute('starts_at', now());
-        $model->setAttribute('ends_at', now());
+        $model->setAttribute('ends_at', now()->addMonth());
         return $model;
     }
 
