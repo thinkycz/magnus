@@ -120,12 +120,14 @@ namespace App{
  * @property string|null $parent_phone
  * @property \Illuminate\Support\Carbon|null $birth_date
  * @property int|null $user_id
+ * @property string|null $nickname
+ * @property bool $is_active
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Course[] $courses
  * @property-read int|null $courses_count
  * @property-read mixed $full_name
+ * @property-read \App\User|null $user
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Lesson[] $lessons
  * @property-read int|null $lessons_count
- * @property-read \App\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student query()
@@ -135,7 +137,9 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereFirstName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereHobbies($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereNickname($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereOrigin($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereParentName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Student whereParentPhone($value)

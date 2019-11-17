@@ -8,7 +8,8 @@ use App\Nova\Metrics\StudentsOverTime;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -51,6 +52,8 @@ class Student extends Resource
         return [
             ID::make()->sortable(),
 
+            Text::make('Nickname'),
+
             Text::make('First Name')
                 ->rules('required'),
 
@@ -79,8 +82,10 @@ class Student extends Resource
             Text::make('Parent Phone')
                 ->hideFromIndex(),
 
-            DateTime::make('Birth Date')
+            Date::make('Birth Date')
                 ->hideFromIndex(),
+
+            Boolean::make('Is Active'),
 
             BelongsTo::make('User')
                 ->nullable()
@@ -93,6 +98,13 @@ class Student extends Resource
             BelongsToMany::make('Lessons')
                 ->searchable()
         ];
+    }
+
+    public static function newModel()
+    {
+        $model = new static::$model;
+        $model->setAttribute('is_active', true);
+        return $model;
     }
 
     /**

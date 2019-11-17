@@ -7,7 +7,7 @@ use App\Nova\Metrics\NewLectors;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -72,7 +72,7 @@ class Lector extends Resource
             Text::make('Available Days')
                 ->hideFromIndex(),
 
-            DateTime::make('Birth Date')
+            Date::make('Birth Date')
                 ->hideFromIndex(),
 
             BelongsTo::make('User')

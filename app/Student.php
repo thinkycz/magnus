@@ -8,6 +8,8 @@ class Student extends Model
 {
     protected $dates = ['birth_date'];
 
+    protected $casts = ['is_active' => 'boolean'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -26,10 +28,5 @@ class Student extends Model
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
-    }
-
-    public function getUserAttribute($value)
-    {
-        return optional($value);
     }
 }

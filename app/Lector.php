@@ -22,9 +22,4 @@ class Lector extends Model
     {
         return $this->first_name . ' ' . $this->last_name;
     }
-
-    public function getUserAttribute($value)
-    {
-        return optional($value);
-    }
 }
