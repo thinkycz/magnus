@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Fields\SubscriptionFields;
+use App\Nova\Filters\InactiveStudents;
 use App\Nova\Metrics\NewStudents;
 use App\Nova\Metrics\StudentsOverTime;
 use Illuminate\Database\Eloquent\Builder;
@@ -142,7 +143,9 @@ class Student extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new InactiveStudents()
+        ];
     }
 
     /**
