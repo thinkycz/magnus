@@ -24,7 +24,7 @@ class Note extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'excerpt';
 
     public static $displayInNavigation = false;
 
@@ -33,9 +33,7 @@ class Note extends Resource
      *
      * @var array
      */
-    public static $search = [
-        'content',
-    ];
+    public static $search = ['content'];
 
     /**
      * Get the fields displayed by the resource.
