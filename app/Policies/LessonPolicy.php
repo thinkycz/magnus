@@ -53,7 +53,7 @@ class LessonPolicy
      */
     public function update(User $user, Lesson $lesson)
     {
-        return false;
+        return $user->is_admin;
     }
 
     /**
@@ -65,7 +65,7 @@ class LessonPolicy
      */
     public function delete(User $user, Lesson $lesson)
     {
-        return false;
+        return $user->is_admin;
     }
 
     /**

@@ -38,6 +38,10 @@ class Classroom extends Resource
     public function fields(Request $request)
     {
         return [
+            Text::make('Day of Week', function () {
+                return $this->starts_at->englishDayOfWeek;
+            })->onlyOnIndex(),
+
             DateTime::make('Starts At')
                 ->rules('required')
                 ->format('D.M.Y HH:mm')
@@ -51,6 +55,10 @@ class Classroom extends Resource
 
             Text::make('Number of Lessons', function () {
                 return $this->lessons->count();
+            })->onlyOnIndex(),
+
+            Text::make('Number of Lectors', function () {
+                return $this->lectors->count();
             })->onlyOnIndex(),
 
             BelongsTo::make('Course'),

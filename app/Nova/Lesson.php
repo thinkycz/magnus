@@ -61,7 +61,8 @@ class Lesson extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Classroom'),
+            BelongsTo::make('Classroom')
+                ->hideWhenUpdating(),
 
             DateTime::make('Starts At')
                 ->format('D.M.Y HH:mm')
