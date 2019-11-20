@@ -18,6 +18,11 @@ class Classroom extends Model
         return $this->hasMany(Lesson::class);
     }
 
+    public function lectors()
+    {
+        return $this->belongsToMany(Lector::class);
+    }
+
     public function getTitleAttribute()
     {
         return $this->course->name . ' - ' . $this->starts_at->englishDayOfWeek . ' ' . $this->starts_at->format('H:i');

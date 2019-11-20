@@ -18,11 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/events', function () {
     return Lesson::query()
         ->whereBetween('starts_at', [now()->subYear()->toDateTimeString(), now()->addYear()->toDateTimeString()])
-        ->whereHas('classroom', function (Builder $query) {
-            return $query->whereHas('course', function (Builder $query) {
-                return $query->whereHas('lectors', function (Builder $query) {
-                    return $query->where('user_id', auth()->user()->id);
-                });
+        ->whereHas('lectors', function (Builder $query) {
+            return $query->where('user_id', auth()->user()->id);
+        })
+        ->orWhereHas('classroom', function (Builder $query) {
+            return $query->whereHas('lectors', function (Builder $query) {
+                return $query->where('user_id', auth()->user()->id);
             });
         })
         ->get();

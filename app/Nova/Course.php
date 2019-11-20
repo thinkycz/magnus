@@ -11,7 +11,6 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -94,9 +93,6 @@ class Course extends Resource
 
             BelongsToMany::make('Students')
                 ->fields(new SubscriptionFields())
-                ->searchable(),
-
-            BelongsToMany::make('Lectors')
                 ->searchable(),
         ];
     }

@@ -41,11 +41,12 @@ class Lesson extends Resource
             })
             ->when(!auth()->user()->is_admin, function (Builder $query) {
                 return $query
-                    ->whereHas('classroom', function (Builder $query) {
-                        return $query->whereHas('course', function (Builder $query) {
-                            return $query->whereHas('lectors', function (Builder $query) {
-                                return $query->where('user_id', auth()->user()->id);
-                            });
+                    ->whereHas('lectors', function (Builder $query) {
+                        return $query->where('user_id', auth()->user()->id);
+                    })
+                    ->orWhereHas('classroom', function (Builder $query) {
+                        return $query->whereHas('lectors', function (Builder $query) {
+                            return $query->where('user_id', auth()->user()->id);
                         });
                     });
             });

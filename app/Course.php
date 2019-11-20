@@ -13,11 +13,6 @@ class Course extends Model
         return $this->belongsToMany(Student::class)->withPivot('paid_amount', 'status');
     }
 
-    public function lectors()
-    {
-        return $this->belongsToMany(Lector::class);
-    }
-
     public function classrooms()
     {
         return $this->hasMany(Classroom::class);

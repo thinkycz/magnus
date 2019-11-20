@@ -13,9 +13,9 @@ class Lector extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function courses()
+    public function classrooms()
     {
-        return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Classroom::class);
     }
 
     public function getFullNameAttribute()

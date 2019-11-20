@@ -6,7 +6,6 @@ use App\Nova\Metrics\NewUsers;
 use App\Nova\Metrics\UsersOverTime;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
