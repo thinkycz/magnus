@@ -20,6 +20,10 @@ class Lector extends Model
 
     public function getFullNameAttribute()
     {
+        if ($this->nickname) {
+            return "{$this->first_name} ({$this->nickname}) {$this->last_name}";
+        }
+
         return $this->first_name . ' ' . $this->last_name;
     }
 }
