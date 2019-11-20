@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -41,13 +40,14 @@ class Lesson extends Resource
                 $query->orderBy('starts_at');
             })
             ->when(!auth()->user()->is_admin, function (Builder $query) {
-                return $query->whereHas('classroom', function (Builder $query) {
-                    return $query->whereHas('course', function (Builder $query) {
-                        return $query->whereHas('lectors', function (Builder $query) {
-                            return $query->where('user_id', auth()->user()->id);
+                return $query
+                    ->whereHas('classroom', function (Builder $query) {
+                        return $query->whereHas('course', function (Builder $query) {
+                            return $query->whereHas('lectors', function (Builder $query) {
+                                return $query->where('user_id', auth()->user()->id);
+                            });
                         });
                     });
-                });
             });
     }
 
@@ -70,7 +70,10 @@ class Lesson extends Resource
                 ->format('D.M.Y HH:mm')
                 ->sortable(),
 
-            BelongsToMany::make('Students')
+            BelongsToMany::make('Attended Students', 'students', Student::class)
+                ->searchable(),
+
+            BelongsToMany::make('Substitute Lectors', 'lectors', Lector::class)
                 ->searchable(),
 
             MorphMany::make('Notes'),

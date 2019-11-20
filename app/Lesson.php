@@ -20,6 +20,11 @@ class Lesson extends Model
         return $this->belongsToMany(Student::class);
     }
 
+    public function lectors()
+    {
+        return $this->belongsToMany(Lector::class);
+    }
+
     public function notes()
     {
         return $this->morphMany(Note::class, 'notable');
