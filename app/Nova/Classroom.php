@@ -30,15 +30,6 @@ class Classroom extends Resource
     public static $displayInNavigation = false;
 
     /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
-
-    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -47,8 +38,6 @@ class Classroom extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             DateTime::make('Starts At')
                 ->rules('required')
                 ->format('D.M.Y HH:mm')

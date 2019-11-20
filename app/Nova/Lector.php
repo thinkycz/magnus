@@ -34,7 +34,7 @@ class Lector extends Resource
      * @var array
      */
     public static $search = [
-        'first_name', 'last_name', 'phone'
+        'nickname', 'first_name', 'last_name', 'phone'
     ];
 
     public static $group = 'Admin';
@@ -48,6 +48,9 @@ class Lector extends Resource
     public function fields(Request $request)
     {
         return [
+            Text::make('Nickname')
+                ->sortable(),
+
             Text::make('First Name')
                 ->rules('required')
                 ->sortable(),
