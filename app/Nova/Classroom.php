@@ -42,10 +42,14 @@ class Classroom extends Resource
                 return $this->starts_at->englishDayOfWeek;
             })->onlyOnIndex(),
 
+            Text::make('Time', function () {
+                return $this->starts_at->format('H:i');
+            })->onlyOnIndex(),
+
             DateTime::make('Starts At')
                 ->rules('required')
                 ->format('D.M.Y HH:mm')
-                ->hideWhenUpdating(),
+                ->onlyOnForms(),
 
             Number::make('Duration Minutes')
                 ->rules('required'),
@@ -53,11 +57,11 @@ class Classroom extends Resource
             Number::make('Frequency Days')
                 ->rules('required'),
 
-            Text::make('Number of Lessons', function () {
+            Text::make('Lessons', function () {
                 return $this->lessons->count();
             })->onlyOnIndex(),
 
-            Text::make('Number of Lectors', function () {
+            Text::make('Lectors', function () {
                 return $this->lectors->count();
             })->onlyOnIndex(),
 

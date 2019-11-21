@@ -53,7 +53,7 @@ class ClassroomPolicy
      */
     public function update(User $user, Classroom $classroom)
     {
-        return $user->is_admin;
+        return false;
     }
 
     /**
