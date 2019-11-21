@@ -30,7 +30,7 @@ class ClassroomPolicy
      */
     public function view(User $user, Classroom $classroom)
     {
-        return $user->is_admin || $classroom->course->lectors->contains($user->lector);
+        return $user->is_admin || $classroom->lectors->contains($user->lector);
     }
 
     /**
