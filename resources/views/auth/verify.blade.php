@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.public')
 
 @section('content')
     <div class="flex h-screen bg-gray-200 p-4 rotate">

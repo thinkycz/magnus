@@ -30,9 +30,9 @@
     <meta name="msapplication-TileImage" content="{{ asset('img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body class="bg-gray-200 h-screen antialiased leading-none">
+<body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
-        @include('partials.header')
+        @include('partials.nav')
 
         @yield('content')
     </div>
