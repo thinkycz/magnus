@@ -26,16 +26,21 @@
             <nav>
                 <ul class="lg:flex items-center justify-between text-sm font-medium text-gray-700 pt-4 lg:pt-0">
                     <li>
-                        <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent border-pink-500 text-pink-500 font-bold" href="#">Trang chủ</a>
+                        <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent border-orange-500 text-orange-500 font-bold" href="#">Trang chủ</a>
                     </li>
                     <li>
                         <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent text-gray-600 hover:text-gray-900 lg:mb-0 mb-2" href="#">Liên hệ</a>
                     </li>
+                    @can('viewNova')
+                        <li>
+                            <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent text-gray-600 hover:text-gray-900 lg:mb-0 mb-2" href="{{ url(config('nova.path')) }}">Admin</a>
+                        </li>
+                    @endcan
                 </ul>
             </nav>
             <a href="#" class="group lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor border-l border-gray-300 pl-6" id="userdropdown">
                 <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">{{ auth()->user()->name }}</p>
-                <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-pink-400 ignore-body-click" src="https://www.gravatar.com/avatar/{{ md5(strtolower(trim(auth()->user()->email))) }}?s=80&d=mp" alt="avatar">
+                <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-orange-400 ignore-body-click" src="https://www.gravatar.com/avatar/{{ md5(strtolower(trim(auth()->user()->email))) }}?s=80&d=mp" alt="avatar">
             </a>
             <div id="usermenu" class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 invisible lg:w-auto w-full">
                 <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded rounded-t-none">

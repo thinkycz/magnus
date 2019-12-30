@@ -3,12 +3,12 @@
 @section('content')
     <div class="flex h-screen bg-gray-200 p-4 rotate">
         <div class="sm:max-w-xl md:max-w-2xl w-full m-auto">
-            <form method="POST" action="{{ route('register') }}" class="flex items-stretch bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-indigo-500 sm:border-0">
+            <form method="POST" action="{{ route('register') }}" class="flex items-stretch bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-green-500 sm:border-0">
                 @csrf
-                <div class="flex hidden overflow-hidden relative sm:block w-5/12 md:w-6/12 bg-gray-600 text-gray-300 py-4 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+                <div class="flex hidden overflow-hidden relative sm:block w-5/12 md:w-6/12 bg-gray-600 text-gray-300 py-4 bg-cover bg-center" style="background-image: url('{{ asset('img/prague.jpg') }}')">
                     <div class="flex-1 absolute bottom-0 text-white p-10">
                         <h3 class="text-4xl font-bold inline-block">Đăng ký</h3>
-                        <p class="text-gray-500 whitespace-no-wrap mt-2">
+                        <p class="text-gray-300 whitespace-no-wrap mt-2">
                             Chào mừng bạn đến với Magnus!
                         </p>
                     </div>
@@ -45,7 +45,7 @@
 
                     <div class="flex flex-wrap items-center">
                         <div class="w-full sm:flex-1">
-                            <input type="submit" value="Đăng ký" class="w-full sm:w-auto bg-indigo-500 text-indigo-100 px-6 py-2 rounded hover:bg-indigo-600 focus:outline-none cursor-pointer">
+                            <input type="submit" value="Đăng ký" class="w-full sm:w-auto bg-green-500 text-green-100 px-6 py-2 rounded hover:bg-green-600 focus:outline-none cursor-pointer">
                         </div>
                     </div>
 

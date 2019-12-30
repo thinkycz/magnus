@@ -5,15 +5,15 @@
 <section class="font-sans container m-auto flex px-5">
 
     <div class="flex-1 flex items-start flex-col justify-center">
-        <h1 class="my-4 font-medium mt-40 lg:mt-32 lg:mt-0 text-center w-full px-2 text-gray-800 text-2xl xl:text-3xl lg:px-0 font-black mb-8 md:w-full lg:text-left lg:-mt-4 h-auto">Bạn có muốn <span id="title" class="text-pink-500"></span></h1>
+        <h1 class="my-4 font-medium mt-40 lg:mt-32 lg:mt-0 text-center w-full px-2 text-gray-800 text-2xl xl:text-3xl lg:px-0 font-black mb-8 md:w-full lg:text-left lg:-mt-4 h-auto min-h-40">Hãy học cùng chúng tôi <span id="title" class="text-orange-500"></span></h1>
         <p class="leading-normal mb-12 pr-36 text-normal xl:text-lg text-center w-full px-16 text-gray-600 leading-loose xl:pr-32 md:text-center md:px-32 sm:text-center lg:text-left lg:px-0">Với Magnus bạn sẽ sở hữu chìa khóa mở ra cánh cửa hội nhập cùng Cộng hoà Séc</p>
 
         <form class="block sm:flex w-full px-0 sm:px-16 xl:pr-32 lg:pr-16 md:px-32 lg:px-0" action="https://devdojo.us10.list-manage.com/subscribe/post?u=40a7d08f5c82f392a291d8a7e&amp;id=b5ca288537" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
-            <input class="bg-white border-2 border-gray-300 rounded py-2 px-4 block w-full focus:outline-none focus:border-indigo-600 text-black input" id="phone" type="text" name="phone" autofocus="" placeholder="+420 777 123 456">
+            <input class="bg-white border-2 border-gray-300 rounded py-2 px-4 block w-full focus:outline-none focus:border-green-600 text-black input" id="phone" type="text" name="phone" autofocus="" placeholder="+420 777 123 456">
             <input type="hidden" name="b_40a7d08f5c82f392a291d8a7e_b5ca288537" tabindex="-1" value="">
-            <button class="hover:bg-grey-darker text-white ml-0 sm:ml-4 py-2 px-6 rounded bg-indigo-600 font-bold w-full sm:w-2/3 mt-4 sm:mt-0">Đăng ký ngay</button>
+            <button class="hover:bg-grey-darker text-white ml-0 sm:ml-4 py-2 px-6 rounded bg-green-600 font-bold w-full sm:w-2/3 mt-4 sm:mt-0">Đăng ký ngay</button>
         </form>
-        <div class="mt-8 flex text-sm border border-gray-200 rounded-full p-2 text-pink-500 text-sm mx-auto lg:mx-0 mb-12 lg:mb-0"><span class="bg-pink-500 text-white rounded-full px-3 h-6 flex items-center">Đăng ký ngay</span> <span class="px-2 flex items-center">để truy cập sớm khi chúng tôi phát hành!</span></div>
+        <div class="mt-8 flex text-sm border border-gray-200 rounded-full p-2 text-orange-500 text-sm mx-auto lg:mx-0 mb-12 lg:mb-0"><span class="bg-orange-500 text-white rounded-full px-3 h-6 flex items-center">Đăng ký ngay</span> <span class="px-2 flex items-center">để truy cập sớm khi chúng tôi phát hành!</span></div>
     </div>
     <div class="flex-1 hidden items-start flex-col justify-center lg:flex relative pl-16">
         <img src="{{ asset('img/hero.png') }}" class="w-full object-cover relative bottom-0 z-10 mt-32" alt="We Teach Hero Image">
@@ -23,16 +23,19 @@
 <section class="bg-gray-100">
 
     <div class="container max-w-5xl mx-auto">
-
-        <h2 class="w-full py-24 text-4xl font-bold leading-tight text-center text-gray-700">​Hãy Thực Hành Và Sử Dụng Tiếng Séc Thường Xuyên</h2>
+        <div class="py-24">
+            <h2 class="w-full text-4xl font-bold leading-tight text-center text-gray-700">​Hãy Thực Hành Và Sử Dụng Tiếng Séc Thường Xuyên</h2>
+            <p class="text-center mt-4 text-gray-600">Các kỹ thuật này sẽ giúp bạn làm chủ các khả năng nghe, nói, phản xạ khi giao tiếp tiếng Séc một cách tự nhiên nhất.</p>
+        </div>
 
         <div class="flex flex-wrap pb-10">
             <div class="w-full sm:w-1/2 p-6">
                 <svg class="w-full h-auto max-h-40" xmlns="http://www.w3.org/2000/svg" width="1109.87058" height="651" viewBox="0 0 1109.87058 651"><title>friends_online</title><path d="M916.7624,142.73765h-.00007c-26.54177,0-48.05813,23.87843-48.05813,53.334v37.42357H880.214l6.6635-13.86573-1.66589,13.86573H959.192L965.24973,220.89l-1.51442,12.60521h8.3294V204.111C972.06471,170.21546,947.305,142.73765,916.7624,142.73765Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><ellipse cx="588.42852" cy="616" rx="521.44207" ry="35" fill="#3f3d56"/><path d="M282.21119,728.02148c-.22949-.375-5.64062-9.41015-7.5166-28.17187-1.7207-17.21289-.61426-46.22656,14.43262-86.69824,28.50586-76.6709-6.56934-138.53321-6.92774-139.14942l1.73047-1.0039c.09082.15625,9.1416,15.92871,14.48828,41.04394a179.0612,179.0612,0,0,1-7.416,99.80664c-28.457,76.54-7.30078,112.77344-7.084,113.13086Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><circle cx="226" cy="332" r="13" fill="#6c63ff"/><circle cx="267" cy="380" r="13" fill="#3f3d56"/><circle cx="239" cy="412" r="13" fill="#6c63ff"/><circle cx="273" cy="439" r="13" fill="#6c63ff"/><circle cx="229" cy="481" r="13" fill="#3f3d56"/><path d="M290.06471,728.5s-13-32,26-56Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M274.07672,727.91953s-5.91641-34.02934-51.7085-33.73768Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M893.56471,210s15,35-5,42l20,66,34-2,9-22-2-33-3-22s-21,5-19-32Z" transform="translate(-45.06471 -124.5)" fill="#ffb8b8"/><path d="M885.56471,251s-33-3-30,21,6,29,6,29l3,36-18,11h-17s-52,12-26,25,35-10,35-10,48,0,51-8S885.56471,251,885.56471,251Z" transform="translate(-45.06471 -124.5)" fill="#ffb8b8"/><path d="M949.56471,241s31-11,33,13,2,26,2,26l6,34s12,30,12,39,9,37,9,37,12,39-1,38-15-42-15-42l-27-54-8-33Z" transform="translate(-45.06471 -124.5)" fill="#ffb8b8"/><path d="M890.56471,247h-8l-1,42s-13,18,3,34l4,26,73-3,5-27s10-22-4-42l-13-41h-7s16.21267,59.77812-18,61C896.56471,298,890.56471,247,890.56471,247Z" transform="translate(-45.06471 -124.5)" fill="#6c63ff"/><path d="M892.56471,344l-6,20s-125,352-87,361,91,21,96,12,31-272,31-272-4,275,9,275,99,2,104-11-45-361-74-369l-8-18Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><path d="M964.56471,334l-79,3s-3.60555,27,0,27c1,0,83,7,82-5S964.56471,334,964.56471,334Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M556.06471,524.5a113.01106,113.01106,0,0,1-63.93,101.82c-.01,0-.01,0-.02.01a110.03577,110.03577,0,0,1-10.54,4.43c-.57.22-1.15.42-1.74.61-1.2.43-2.42005.82-3.65,1.19q-3.795,1.17-7.7,2.07h-.01l-.07.02-.16.03c-.34.08-.69.16-1.04.23q-2.91.645-5.88,1.11a112.11377,112.11377,0,0,1-18.26,1.48c-3.28,0-6.54-.14-9.75-.42a4.55644,4.55644,0,0,1-.52-.05,113.4346,113.4346,0,0,1-25.86-5.43c-1.24-.42-2.48-.86-3.7-1.33a113.00912,113.00912,0,1,1,152.83-105.77Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M429.63857,525.76772s26.50394-11.54886,38.95276.65077S435.26062,534.60236,429.63857,525.76772Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M475.40388,470.99668c-8.9068-15.04974-26.5282-15.75113-26.5282-15.75113s-17.171-2.19581-28.18617,20.72513c-10.267,21.3642-24.4367,41.99177-2.28121,46.993l4.00193-12.45578,2.47837,13.3831a86.6862,86.6862,0,0,0,9.47951.162c23.72673-.766,46.32287.22413,45.59531-8.29C478.99624,504.44459,483.974,485.47754,475.40388,470.99668Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><path d="M479.83471,631.37c.59-.19,1.17-.39,1.74-.61l-.13-.18-1.61-.09-10.42-.56h-.01l-1.75-.09-8.29-.45-18.05-.98-9.67-.52-.49-.03h-.12l-6.81-.37-2.22-.12-2.11,7.74a109.52916,109.52916,0,0,0,12.9,1.92,4.573,4.573,0,0,0,.52.05c3.21.28,6.47.42,9.75.42a112.11784,112.11784,0,0,0,18.26-1.48q2.97-.465,5.88-1.11c.35-.07.7-.15,1.04-.23l.16-.03.07-.02h.01q3.9-.9,7.7-2.07Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><path d="M434.0559,503.6811s4.01574,26.50394-4.01575,29.71654,16.063,16.86614,16.063,16.86614h13.65354l8.83465-18.47244s-8.0315-14.45669-3.2126-28.11024S434.0559,503.6811,434.0559,503.6811Z" transform="translate(-45.06471 -124.5)" fill="#a0616a"/><path d="M479.83471,631.37V537.41s-1.02-9.65-9.11-7.14a15.23823,15.23823,0,0,0-2.4,1,27.73941,27.73941,0,0,0-3.82,2.49c-.46.35-.93.73-1.42,1.14-.04.03-.08.07-.12.1-15.26,12.85-22.48,4.02-24.09,2.41-.59-.58-2.13-2.23-3.86-4.09v-.01c-.75-.8-1.53-1.64-2.27-2.46-2.29-2.47-4.31-4.68-4.31-4.68l-8.03,6.42,1.96,48.68.46,11.48v.01l.15,3.57v.02l1.25,31.14.19,4.7a85.33894,85.33894,0,0,0,8.27,2.18c.82.17,1.69.34,2.58.5,6.96,1.26,15.72,1.91,21.28-1.08a19.75218,19.75218,0,0,1,3.52-1.47,24.45041,24.45041,0,0,1,7.46-1.03c.54.01,1.07.03,1.6.06h.01a36.07262,36.07262,0,0,1,7.05,1.21Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M441.31471,628.41a48.912,48.912,0,0,1-6.05,6.46c-.68.62-1.36,1.22-2.05,1.81-.14.12-.28.23-.42.35a113.4346,113.4346,0,0,1-25.86-5.43c-1.24-.42-2.48-.86-3.7-1.33a37.33359,37.33359,0,0,0,1.81-6.03c5.53-25.92-10.55-65.26-11.95-71.57-.51-2.27,1.37-5.42,4.37994-8.77,6.57-7.29,18.52-15.53,22.93-17.73a16.55261,16.55261,0,0,1,10.65-.98h.01a19.21522,19.21522,0,0,1,3.27.98v.01c.01.15.12,1.29.31,3.24.1,1.07.22,2.37.37,3.89v.01c.27,2.84.61,6.38,1.01,10.42v.01c2.41,24.89,6.77,68.21,8.47,75.58C445.12471,622.06,443.72468,625.22,441.31471,628.41Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M479.83471,631.37c.59-.19,1.17-.39,1.74-.61a110.02706,110.02706,0,0,0,10.54-4.43c-5.14-15.02,10.05-62.77,14.4-77.55v-.02c.51-1.73.87-3.01,1.03-3.72,1.61-7.23-22.89-14.05-23.69-15.66-.62-1.22-10.57-2.45-15.26-2.96-1.45-.16-2.4-.25-2.4-.25-1.24.96-2.19,3.72-2.93,7.73-.07.32-.13.66-.18,1-.53,3.1-.94,6.85-1.27,11.06-1.82,22.96-1.2,59.24-2.86,74.18a30.421,30.421,0,0,0,.41,9.25,29.04045,29.04045,0,0,0,.7,2.93,34.2877,34.2877,0,0,0,1.26,3.7q2.97-.465,5.88-1.11c.35-.07.7-.15,1.04-.23l.16-.03.07-.02h.01q3.9-.9,7.7-2.07Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><ellipse cx="428.74709" cy="368.33858" rx="1.6063" ry="3.2126" fill="#a0616a"/><ellipse cx="381.36127" cy="368.33858" rx="1.6063" ry="3.2126" fill="#a0616a"/><path d="M479.83471,631.37c.59-.19,1.17-.39,1.74-.61a110.02706,110.02706,0,0,0,10.54-4.43.03674.03674,0,0,0,.01.03.06012.06012,0,0,1,.01-.04c6-31.68,12.36-65.57,14.38-77.54v-.02c.35-2.08.57-3.49.63-4.12.8-8.03-19.28-8.03-19.28-8.03l-3.2,16.17-4.83,24.43-1.66,8.39-8.77,44.33-.28,1.42-.65,3.28h.01q3.9-.9,7.7-2.07Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M432.79469,637.03a113.4346,113.4346,0,0,1-25.86-5.43c-.63-2.43-1.26-4.89-1.89-7.36-7.81-30.65-15.16-63.08-15.16-69.16,0-5.03,3.51-8.66,7.59-11.18a43.08826,43.08826,0,0,1,12.49-4.88s2.56,10.65,6.24,26.01c1.97,8.2,4.25,17.74,6.62,27.72v.01c2.76,11.58,5.65,23.74,8.33,35.1q.645,2.76,1.28,5.44v.04a.09972.09972,0,0,1,.01.04q.12.49494.24.99c.18.78.36,1.55.53,2.31.04.13.07.26.1.4A4.55644,4.55644,0,0,1,432.79469,637.03Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M414.37873,562.7126l18.07087,70.67S424.01653,571.54724,414.37873,562.7126Z" transform="translate(-45.06471 -124.5)" opacity="0.2"/><path d="M461.32472,636.02l5.88-1.14v.03Q464.29472,635.555,461.32472,636.02Z" transform="translate(-45.06471 -124.5)" opacity="0.2"/><path d="M484.66468,552.78l-4.82995,24.43-1.66,8.39-8.76,44.33h-.01l-.27,1.42h-.01l-.64,3.28h-.01l-.07.02-.16.03-1.04.2c.09-1.12.2-2.32.32-3.59.04-.47.08-.95.13-1.45,1.88-20.43,5.89-55.72,12.18-70.5C481.31471,555.86,482.92469,553.52,484.66468,552.78Z" transform="translate(-45.06471 -124.5)" opacity="0.2"/><circle cx="405.05418" cy="368.74016" r="23.29134" fill="#a0616a"/><polygon points="426.401 345.046 408.992 335.927 384.951 339.657 379.977 361.626 392.359 361.15 395.818 353.079 395.818 361.017 401.531 360.797 404.847 347.947 406.92 361.626 427.23 361.212 426.401 345.046" fill="#2f2e41"/><path d="M271.06471,381.5a112.99106,112.99106,0,0,1-47.1,91.79,111.28041,111.28041,0,0,1-12.47,7.8,113.29722,113.29722,0,0,1-77.37,10.86,110.59727,110.59727,0,0,1-16.42-4.88,113.00957,113.00957,0,1,1,153.36-105.57Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><circle cx="105.87318" cy="223.64249" r="25.9887" fill="#ffb8b8"/><path d="M140.78605,368.04009s3.24859,15.43079,3.24859,17.05508,15.43079,8.93362,15.43079,8.93362l13.80649-2.43644,4.87288-14.61865s-8.12146-12.1822-8.12146-17.05508Z" transform="translate(-45.06471 -124.5)" fill="#ffb8b8"/><path d="M158.06471,494.5a113.06328,113.06328,0,0,1-23.94-2.55c-.39-7.95-.65-16.71-.65-16.71l-7.92-22.98-16.44-47.67,33.85-25.84s8.38,13.65,20.56,9.59a16.80445,16.80445,0,0,0,11.92-15.7l40.06,14.08-6.92,56.15-.39,3.14,3.3,35.08A112.443,112.443,0,0,1,158.06471,494.5Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M128.40056,327.20426s8.25131-17.87785,24.06633-13.75219,24.754,10.31415,25.44156,16.50263-.34381,15.47122-.34381,15.47122-1.719-12.72078-12.72078-9.97034-28.192.68761-28.192.68761l-2.75044,24.75394s-3.09424-4.46946-6.53229-1.719S117.3988,332.70514,128.40056,327.20426Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><path d="M94.13472,474.68l5.23-44.1c-.81-17.06,9.75-25.99,9.75-25.99h12.18l8.93,30.05-4.67,17.62-5.88,22.17-1.63,2.44s1.63,2.43.81,3.25c-.81.81-1.62,4.06-1.62,4.06s.17,1.16.47,2.89A111.97886,111.97886,0,0,1,94.13472,474.68Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M243.9347,454.95a112.843,112.843,0,0,1-19.97,18.34,37.72653,37.72653,0,0,1-2.78-6.17l-12.6-24.25-8.51-16.36,1.62-42.23,13.81,2.44s8.12,8.12,11.37,17.87l6.5,29.23,10.55,21.12Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M823.06471,316.5a112.91664,112.91664,0,0,1-54.27,96.55c-2,1.22-4.04,2.37-6.12,3.47-3.1,1.64-6.29,3.14-9.55,4.47V421c-1.04.43-2.08.84-3.13,1.23-.49.19-.99.38-1.49.56a113.26732,113.26732,0,0,1-38.44,6.71,113.43241,113.43241,0,0,1-25.57-2.9,111.72714,111.72714,0,0,1-12.85-3.8h-.01a112.53482,112.53482,0,0,1-15.5-6.98q-1.95-1.05-3.84-2.19c-.88-.52-1.74-1.05-2.6-1.59a113.00637,113.00637,0,1,1,173.37-95.54Z" transform="translate(-45.06471 -124.5)" fill="#3f3d56"/><path d="M697.039,300.00393s.66891,17.39168-3.34455,21.40514,20.06732,18.06059,20.06732,18.06059l14.04712-22.074s-5.35128-9.36475-4.01346-17.39168Z" transform="translate(-45.06471 -124.5)" fill="#a0616a"/><circle cx="663.68023" cy="161.12235" r="24.08078" fill="#a0616a"/><path d="M749.5547,416.65q.225,2.79008.44,5.58c-.49.19-.99.38-1.49.56a113.26732,113.26732,0,0,1-38.44,6.71,113.43241,113.43241,0,0,1-25.57-2.9,111.72714,111.72714,0,0,1-12.85-3.8l-.01.09a.13868.13868,0,0,1,0-.09,27.26444,27.26444,0,0,1,1.14-6.01v-.01c.56-2.06,1.32-4.44,2.19-7.07.94-2.81,1-8.95.8-14.72-.02-.44-.03-.89-.05-1.32-.08-1.87-.18005-3.66-.28-5.25-.23-3.59-.47-6.14-.47-6.14l-14.72-39.47,35.55-25.96c2.1,6.81,6.6,6.57,6.6,6.57,19.08,1.31,22.59-11.87,22.7-12.3v-.01l34.15,22.34-14.04,34.11s.57,5.78,1.38,14.6c.12,1.3.24,2.67.38,4.1C747.7447,394.92,748.69471,405.71,749.5547,416.65Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M676.63472,388.63l-.7,5.08-.17,1.28-2.97,21.7-.02.09v.01l-1.13,6.01-.01.09a.13868.13868,0,0,1,0-.09,112.53482,112.53482,0,0,1-15.5-6.98q-1.95-1.05-3.84-2.19a69.56554,69.56554,0,0,1,2.94-7.6l2.04-15.88.63-4.86,17.53,3.13Z" transform="translate(-45.06471 -124.5)" fill="#a0616a"/><path d="M669.94812,341.81085l-9.6992,1.00336s-6.35465,47.15821-4.34792,47.15821,24.74969,5.35128,25.4186,4.01346S669.94812,341.81085,669.94812,341.81085Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><path d="M690.165,260.9379l-4.341-1.57854s9.07652-9.07651,21.70482-8.28721l-3.55178-3.55173s8.68192-3.157,16.57455,5.1302c4.149,4.35642,8.94945,9.47715,11.942,15.2456h4.64887l-1.94027,3.88053,6.79093,3.88053-6.97022-.697a19.58147,19.58147,0,0,1-.65927,10.05015l-1.57848,4.3409s-6.31415-12.62818-6.31415-14.20672v3.94632s-4.341-3.55167-4.341-5.91945l-2.36778,2.76243-1.18389-4.341-14.60136,4.341,2.36777-3.55167-9.07651,1.18389,3.55178-4.341s-10.2604,5.1302-10.65511,9.47117-5.52474,9.86575-5.52474,9.86575l-2.36777-3.94631S678.72071,266.85734,690.165,260.9379Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><path d="M768.79469,413.05c-2,1.22-4.04,2.37-6.12,3.47-3.1,1.64-6.29,3.14-9.55,4.47V421c-1.04.43-2.08.84-3.13,1.23-.49.19-.99.38-1.49.56l1.05-6.14-4.76-30.25-.6-3.79,2.39-.45,22.36-4.23v27.43S769.00471,408.33,768.79469,413.05Z" transform="translate(-45.06471 -124.5)" fill="#a0616a"/><path d="M746.20394,331.77719l13.04375,1.67227s15.7194,47.82712,11.70594,49.83385-30.101,3.34455-30.101,3.34455Z" transform="translate(-45.06471 -124.5)" fill="#d0cde1"/><circle cx="186" cy="171" r="33" fill="#6c63ff"/><circle cx="476" cy="316" r="33" fill="#6c63ff"/><circle cx="747" cy="112" r="33" fill="#6c63ff"/><circle cx="863.95572" cy="68.85558" r="28.09772" fill="#ffb8b8"/><path d="M930.42446,157.42939A25.20421,25.20421,0,0,0,910.53759,147.281h-.94352c-18.19178,0-32.93906,16.46146-32.93906,36.76775v.00007h6.09559l.98442-7.49307,1.44336,7.49307H921.331l3.0289-6.33928-.75724,6.33928h7.11224q4.97823,24.7232-14.30581,49.44639h12.11554l6.05774-12.67856-1.51442,12.67856h23.09518l4.54332-29.16077C960.70641,182.4957,948.01748,163.97691,930.42446,157.42939Z" transform="translate(-45.06471 -124.5)" fill="#2f2e41"/><circle cx="892" cy="18" r="18" fill="#2f2e41"/></svg>
             </div>
             <div class="w-full sm:w-1/2 p-6 sm:pr-48">
-                <h3 class="text-2xl font-bold leading-none my-3 text-gray-700">Luyện nghe tiếng Séc</h3>
-                <p class="text-gray-600 mb-8">Tell your user about one of you awesome features. Try and intrigue them with your messaging.</p>
+                <h3 class="text-2xl font-bold leading-none my-4 text-gray-700">Luyện nghe tiếng Séc</h3>
+                <p class="text-gray-600 mb-4">Cải thiện khả năng nghe hiểu với phương pháp nghe ngấm.</p>
+                <p class="text-gray-600 mb-4">Luyện nghe từ tốc độ chậm tới ​nhanh.</p>
             </div>
         </div>
 
@@ -42,9 +45,11 @@
             </div>
             <div class="w-full sm:w-1/2 p-6 sm:pr-48">
                 <div class="align-middle">
-                    <h3 class="text-2xl text-gray-800 font-bold leading-none my-3 text-gray-700">Luyện nói tiếng Séc</h3>
-                    <p class="text-gray-600 mb-8">Tell the users about another feature or possibly a reason why they need to signup for your service.<br><br>
-                    </p></div>
+                    <h3 class="text-2xl font-bold leading-none my-4 text-gray-700">Luyện nói tiếng Séc</h3>
+                    <p class="text-gray-600 mb-4">Cách nói chuyện giống người bản xứ</p>
+                    <p class="text-gray-600 mb-4">Nói lưu loát, không bị cứng mồm</p>
+                    <p class="text-gray-600 mb-4">Nói chuyện tự nhiên hơn, thoải mái hơn không bị tự ti áp lực</p>
+                </div>
             </div>
         </div>
 
@@ -54,9 +59,11 @@
             </div>
             <div class="w-full sm:w-1/2 p-6 sm:pr-48">
                 <div class="align-middle">
-                    <h3 class="text-2xl text-gray-800 font-bold leading-none my-3 text-gray-700">Phát âm tiếng Séc</h3>
-                    <p class="text-gray-600 mb-8">Tell the users about another feature or possibly a reason why they need to signup for your service.<br><br>
-                    </p></div>
+                    <h3 class="text-2xl font-bold leading-none my-4 text-gray-700">Phát âm tiếng Séc</h3>
+                    <p class="text-gray-600 mb-4">Phát âm một cách dễ dàng không gây khó khăn</p>
+                    <p class="text-gray-600 mb-4">Phất âm chuẩn, không gây hiểu lầm cho người giao tiếp</p>
+                    <p class="text-gray-600 mb-4">Phát âm tốt giúp bạn tự tin trong mọi trường hợp</p>
+                </div>
             </div>
         </div>
 
@@ -66,9 +73,11 @@
             </div>
             <div class="w-full sm:w-1/2 p-6 sm:pr-48">
                 <div class="align-middle">
-                    <h3 class="text-2xl text-gray-800 font-bold leading-none my-3 text-gray-700">Ngữ pháp tiếng Séc</h3>
-                    <p class="text-gray-600 mb-8">Tell the users about another feature or possibly a reason why they need to signup for your service.<br><br>
-                    </p></div>
+                    <h3 class="text-2xl font-bold leading-none my-4 text-gray-700">Ngữ pháp tiếng Séc</h3>
+                    <p class="text-gray-600 mb-4">Các cách chia động từ dễ nhớ dễ hiểu</p>
+                    <p class="text-gray-600 mb-4">7 cách không còn là trở ngại</p>
+                    <p class="text-gray-600 mb-4">Ngữ pháp trong giao tiếp trở nên đơn giản hơn</p>
+                </div>
             </div>
         </div>
 
@@ -76,16 +85,16 @@
 
 </section>
 
-<svg width="100%" height="auto" class="w-full relative bg-gray-100" style="top:1px;" viewBox="0 0 1370 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Desktop-HD" transform="translate(0.000000, -558.000000)" fill="#5a67d8"><path d="M0,558 C243.726562,600.97601 472.059896,622.464014 685,622.464014 C897.940104,622.464014 1126.27344,600.97601 1370,558 L1370,622.464014 L0,622.464014 L0,558 Z" id="Rectangle-4"></path></g></g></svg>
+<svg width="100%" height="auto" class="w-full relative bg-gray-100" style="top:1px;" viewBox="0 0 1370 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Desktop-HD" transform="translate(0.000000, -558.000000)" fill="#38a169"><path d="M0,558 C243.726562,600.97601 472.059896,622.464014 685,622.464014 C897.940104,622.464014 1126.27344,600.97601 1370,558 L1370,622.464014 L0,622.464014 L0,558 Z" id="Rectangle-4"></path></g></g></svg>
 
 <!-- Footer Email Section -->
-<section class="text-center pt-32 pb-40 bg-indigo-600 relative">
+<section class="text-center pt-32 pb-40 bg-green-600 relative">
 
     <div class="container mx-auto text-center">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Hãy đăng ký ngay</h1>
         <h3 class="my-4 text-3xl leading-tight text-gray-400">Để truy cập sớm khi chúng tôi phát hành!</h3>
         <form class="flex w-full px-16 xl:pr-6 lg:pr-16 md:px-32 lg:px-0 lg:w-1/2 lg:m-auto lg:mt-8">
-            <input class="bg-white border-2 border-white rounded py-2 px-4 block w-full focus:outline-none focus:border-indigo-400 text-black input w-1/3" type="email" autofocus="" placeholder="+420 777 123 456">
+            <input class="bg-white border-2 border-white rounded py-2 px-4 block w-full focus:outline-none focus:border-green-400 text-black input w-1/3" type="email" autofocus="" placeholder="+420 777 123 456">
             <button class="hover:bg-grey-darker text-white ml-4 py-2 px-6 rounded bg-gray-800 font-bold w-2/3">Đăng ký ngay</button>
         </form>
     </div>
@@ -96,7 +105,7 @@
 
 <script>
     var typed = new Typed('#title', {
-        strings: ["nói tiếng Séc tốt hơn?", "dạy kèm các môn học?", "luyện tiếng thi trvalý?"],
+        strings: ["tiếng Séc dễ dàng hơn!", "cách phát âm chuẩn hơn.", "để có bằng A1 dễ hơn!"],
         typeSpeed: 60,
         backSpeed: 20,
         backDelay: 1500,
