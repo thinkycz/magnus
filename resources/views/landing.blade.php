@@ -5,18 +5,27 @@
 <section class="font-sans container m-auto flex px-5">
 
     <div class="flex-1 flex items-start flex-col justify-center">
-        <h1 class="my-4 font-medium mt-40 lg:mt-32 lg:mt-0 text-center w-full px-2 text-gray-800 text-2xl xl:text-3xl lg:px-0 font-black mb-8 md:w-full lg:text-left lg:-mt-4 h-auto min-h-40">Hãy học cùng chúng tôi <span id="title" class="text-orange-500"></span></h1>
-        <p class="leading-normal mb-12 pr-36 text-normal xl:text-lg text-center w-full px-16 text-gray-600 leading-loose xl:pr-32 md:text-center md:px-32 sm:text-center lg:text-left lg:px-0">Với Magnus bạn sẽ sở hữu chìa khóa mở ra cánh cửa hội nhập cùng Cộng hoà Séc</p>
+        <h1 class="my-4 font-medium mt-40 lg:mt-32 lg:mt-0 text-center w-full px-2 text-gray-800 text-2xl xl:text-3xl lg:px-0 font-black mb-8 md:w-full lg:text-left lg:-mt-4 h-auto xl:h-16">Hãy học cùng chúng tôi <span id="title" class="text-orange-500"></span></h1>
+        <p class="leading-normal mb-4 pr-36 text-normal xl:text-lg text-center w-full px-16 text-gray-600 leading-loose xl:pr-32 md:text-center md:px-32 sm:text-center lg:text-left lg:px-0">Với Magnus bạn sẽ sở hữu chìa khóa mở ra cánh cửa hội nhập cùng Cộng hoà Séc</p>
 
-        <form class="block sm:flex w-full px-0 sm:px-16 xl:pr-32 lg:pr-16 md:px-32 lg:px-0" action="https://devdojo.us10.list-manage.com/subscribe/post?u=40a7d08f5c82f392a291d8a7e&amp;id=b5ca288537" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
-            <input class="bg-white border-2 border-gray-300 rounded py-2 px-4 block w-full focus:outline-none focus:border-green-600 text-black input" id="phone" type="text" name="phone" autofocus="" placeholder="+420 777 123 456">
-            <input type="hidden" name="b_40a7d08f5c82f392a291d8a7e_b5ca288537" tabindex="-1" value="">
-            <button class="hover:bg-grey-darker text-white ml-0 sm:ml-4 py-2 px-6 rounded bg-green-600 font-bold w-full sm:w-2/3 mt-4 sm:mt-0">Đăng ký ngay</button>
-        </form>
-        <div class="mt-8 flex text-sm border border-gray-200 rounded-full p-2 text-orange-500 text-sm mx-auto lg:mx-0 mb-12 lg:mb-0"><span class="bg-orange-500 text-white rounded-full px-3 h-6 flex items-center">Đăng ký ngay</span> <span class="px-2 flex items-center">để truy cập sớm khi chúng tôi phát hành!</span></div>
+        <div class="flex justify-center items-center flex-col">
+            <div class="max-w-5xl">
+                <a href="/login/facebook" class="bg-blue-600 text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+                    <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-6" xmlns="http://www.w3.org/2000/svg"><path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/></svg>
+                    <span class="border-l border-blue-500 h-6 w-1 block mr-1"></span>
+                    <span class="pl-3">Đăng nhập với Facebook</span>
+                </a>
+                <a href="/register" class="bg-green-500 text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+                    <svg class="fill-current mr-3 w-6 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M13.04 14.69l1.07-2.14a1 1 0 0 1 1.2-.5l6 2A1 1 0 0 1 22 15v5a2 2 0 0 1-2 2h-2A16 16 0 0 1 2 6V4c0-1.1.9-2 2-2h5a1 1 0 0 1 .95.68l2 6a1 1 0 0 1-.5 1.21L9.3 10.96a10.05 10.05 0 0 0 3.73 3.73zM8.28 4H4v2a14 14 0 0 0 14 14h2v-4.28l-4.5-1.5-1.12 2.26a1 1 0 0 1-1.3.46 12.04 12.04 0 0 1-6.02-6.01 1 1 0 0 1 .46-1.3l2.26-1.14L8.28 4z"/></svg>
+                    <span class="border-l border-green-400 h-6 w-1 block mr-1"></span>
+                    <span class="pl-3">Đăng nhập với số điện thoại</span>
+                </a>
+            </div>
+
+        </div>
     </div>
     <div class="flex-1 hidden items-start flex-col justify-center lg:flex relative pl-16">
-        <img src="{{ asset('img/hero.png') }}" class="w-full object-cover relative bottom-0 z-10 mt-32" alt="We Teach Hero Image">
+        <img src="{{ asset('img/hero.png') }}" class="w-full object-cover relative bottom-0 z-10 mt-32" alt="Magnus Hero Image">
     </div>
 </section>
 
@@ -91,7 +100,7 @@
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Hãy đăng ký ngay</h1>
         <h3 class="my-4 text-3xl leading-tight text-gray-400">Để truy cập sớm khi chúng tôi phát hành!</h3>
         <form class="flex w-full px-16 xl:pr-6 lg:pr-16 md:px-32 lg:px-0 lg:w-1/2 lg:m-auto lg:mt-8">
-            <input class="bg-white border-2 border-white rounded py-2 px-4 block w-full focus:outline-none focus:border-green-400 text-black input w-1/3" type="email" autofocus="" placeholder="+420 777 123 456">
+            <input class="bg-white border-2 border-white rounded py-2 px-4 block w-full focus:outline-none focus:border-green-400 text-black input w-1/3" type="email" placeholder="+420 777 123 456">
             <button class="hover:bg-grey-darker text-white ml-4 py-2 px-6 rounded bg-gray-800 font-bold w-2/3">Đăng ký ngay</button>
         </form>
     </div>

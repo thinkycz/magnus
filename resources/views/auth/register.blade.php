@@ -17,35 +17,35 @@
                     </svg>
                 </div>
                 <div class="flex-1 p-6 sm:p-10 sm:py-12">
-                    <h3 class="text-xl text-gray-700 font-bold mb-6">
+                    <h3 class="text-xl text-gray-700 font-bold mb-4">
                         Đăng ký <span class="text-gray-400 font-light">tài khoản mới</span></h3>
 
-                    <input id="name" type="text" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4 {{ $errors->has('name') ? ' border-red-500' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="Họ và Tên">
+                    <input id="name" type="text" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mt-4 {{ $errors->has('name') ? ' border-red-500' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="Họ và Tên">
                     @if ($errors->has('name'))
                         <p class="text-red-500 text-xs italic mt-4">
                             {{ $errors->first('name') }}
                         </p>
                     @endif
 
-                    <input id="email" type="email" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4 {{ $errors->has('email') ? ' border-red-500' : '' }}" name="email" value="{{ old('email') }}" required placeholder="Dịa chỉ Email">
-                    @if ($errors->has('email'))
+                    <input id="phone" type="text" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mt-4 {{ $errors->has('phone') ? ' border-red-500' : '' }}" name="phone" value="{{ old('phone') }}" required placeholder="Số điện thoại">
+                    @if ($errors->has('phone'))
                         <p class="text-red-500 text-xs italic mt-4">
-                            {{ $errors->first('email') }}
+                            {{ $errors->first('phone') }}
                         </p>
                     @endif
 
-                    <input id="password" type="password" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4 {{ $errors->has('password') ? ' border-red-500' : '' }}" name="password" required placeholder="Mật khẩu">
+                    <input id="password" type="password" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mt-4 {{ $errors->has('password') ? ' border-red-500' : '' }}" name="password" required placeholder="Mật khẩu">
                     @if ($errors->has('password'))
                         <p class="text-red-500 text-xs italic mt-4">
                             {{ $errors->first('password') }}
                         </p>
                     @endif
 
-                    <input id="password-confirm" type="password" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4" name="password_confirmation" required placeholder="Xác nhận mật khẩu">
+                    <input id="password-confirm" type="password" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mt-4" name="password_confirmation" required placeholder="Xác nhận mật khẩu">
 
-                    <div class="flex flex-wrap items-center">
+                    <div class="flex flex-wrap items-center mt-4">
                         <div class="w-full sm:flex-1">
-                            <input type="submit" value="Đăng ký" class="w-full sm:w-auto bg-green-500 text-green-100 px-6 py-2 rounded hover:bg-green-600 focus:outline-none cursor-pointer">
+                            <input type="submit" value="Đăng ký" class="w-full sm:w-auto bg-green-500 text-green-100 px-6 py-3 rounded-full hover:bg-green-600 focus:outline-none cursor-pointer">
                         </div>
                     </div>
 
