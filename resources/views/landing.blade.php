@@ -10,12 +10,12 @@
 
         <div class="flex justify-center items-center flex-col">
             <div class="max-w-5xl">
-                <a href="/login/facebook" class="bg-blue-600 text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+                <a href="/login/facebook" class="bg-blue-500 text-gray-100 hover:bg-blue-600 shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
                     <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-6" xmlns="http://www.w3.org/2000/svg"><path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/></svg>
-                    <span class="border-l border-blue-500 h-6 w-1 block mr-1"></span>
+                    <span class="border-l border-blue-400 h-6 w-1 block mr-1"></span>
                     <span class="pl-3">Đăng nhập với Facebook</span>
                 </a>
-                <a href="/register" class="bg-green-500 text-gray-100 hover:text-white shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
+                <a href="{{ route('login') }}" class="bg-green-500 text-gray-100 hover:bg-green-600 shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">
                     <svg class="fill-current mr-3 w-6 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M13.04 14.69l1.07-2.14a1 1 0 0 1 1.2-.5l6 2A1 1 0 0 1 22 15v5a2 2 0 0 1-2 2h-2A16 16 0 0 1 2 6V4c0-1.1.9-2 2-2h5a1 1 0 0 1 .95.68l2 6a1 1 0 0 1-.5 1.21L9.3 10.96a10.05 10.05 0 0 0 3.73 3.73zM8.28 4H4v2a14 14 0 0 0 14 14h2v-4.28l-4.5-1.5-1.12 2.26a1 1 0 0 1-1.3.46 12.04 12.04 0 0 1-6.02-6.01 1 1 0 0 1 .46-1.3l2.26-1.14L8.28 4z"/></svg>
                     <span class="border-l border-green-400 h-6 w-1 block mr-1"></span>
                     <span class="pl-3">Đăng nhập với số điện thoại</span>
@@ -98,11 +98,9 @@
 <section class="text-center py-24 bg-green-600 relative">
     <div class="container mx-auto text-center">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Hãy đăng ký ngay</h1>
-        <h3 class="my-4 text-3xl leading-tight text-gray-400">Để truy cập sớm khi chúng tôi phát hành!</h3>
-        <form class="flex w-full px-16 xl:pr-6 lg:pr-16 md:px-32 lg:px-0 lg:w-1/2 lg:m-auto lg:mt-8">
-            <input class="bg-white border-2 border-white rounded py-2 px-4 block w-full focus:outline-none focus:border-green-400 text-black input w-1/3" type="email" placeholder="+420 777 123 456">
-            <button class="hover:bg-grey-darker text-white ml-4 py-2 px-6 rounded bg-gray-800 font-bold w-2/3">Đăng ký ngay</button>
-        </form>
+        <h3 class="my-4 text-3xl leading-tight text-gray-300">Để truy cập sớm khi chúng tôi phát hành!</h3>
+
+        <a href="{{ route('register') }}" class="inline-block hover:bg-gray-900 text-white mt-4 py-4 px-8 rounded-full bg-gray-800 font-bold">Đăng ký ngay</a>
     </div>
 </section>
 

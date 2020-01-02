@@ -3,11 +3,9 @@
 @section('content')
     <div class="container mx-auto max-w-3xl mt-8">
         <h1 class="text-2xl font-bold text-gray-700 px-6 md:px-0">Tài khoản của bạn</h1>
-        <ul class="flex border-b border-gray-300 text-sm font-medium text-gray-600 mt-3 px-6 md:px-0">
-            <li class="mr-8 text-gray-900 border-b-2 border-gray-800">
-                <a href="#_" class="py-4 inline-block">Thông tin cá nhân</a></li>
-            <li class="mr-8 hover:text-gray-900"><a href="#_" class="py-4 inline-block">Mật khẩu</a></li>
-        </ul>
+
+        @include('partials.profile-subnav')
+
         <form action="{{ route('profile.update', $user) }}" method="POST">
             @method('PUT')
             @csrf

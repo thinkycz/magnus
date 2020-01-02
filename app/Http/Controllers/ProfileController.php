@@ -15,15 +15,15 @@ class ProfileController extends Controller
         return view('profile', compact('user'));
     }
 
-    public function update(Request $request, User $profile)
+    public function update(Request $request, User $user)
     {
         $data = $request->validate([
             'name' => 'required',
-            'phone' => ['required', 'digits:9', Rule::unique('users')->ignoreModel($profile)],
-            'email' => ['email', Rule::unique('users')->ignoreModel($profile)]
+            'phone' => ['required', 'digits:9', Rule::unique('users')->ignoreModel($user)],
+            'email' => ['email', Rule::unique('users')->ignoreModel($user)]
         ]);
 
-        $profile->update($data);
+        $user->update($data);
 
         return redirect()->route('profile.index');
     }

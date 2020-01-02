@@ -18,7 +18,7 @@
                 <a href="/#_" class="font-semibold text-gray-900 hover:text-orange-500">Liên hệ</a>
             </li>
             <li>
-                <a href="{{ route('login') }}" class="text-white ml-4 py-3 px-6 rounded-full bg-gray-800 font-bold hidden sm:block bg-green-600">Đăng nhập</a>
+                <a href="{{ route('login') }}" class="text-white ml-4 py-3 px-6 rounded-full bg-gray-800 font-bold hidden sm:block bg-green-500 hover:bg-green-600">Đăng nhập</a>
             </li>
         </ul>
     </nav>
