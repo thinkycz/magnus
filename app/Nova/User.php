@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasOne;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphMany;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
@@ -33,7 +34,7 @@ class User extends Resource
      *
      * @var array
      */
-    public static $search = ['name', 'email'];
+    public static $search = ['name', 'email', 'phone'];
 
     /**
      * Get the fields displayed by the resource.
@@ -51,10 +52,15 @@ class User extends Resource
                 ->sortable(),
 
             Text::make('Email')
-                ->rules('required', 'email', 'max:254')
+                ->rules('email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}')
                 ->sortable(),
+
+            Number::make('Phone')
+                ->rules('required', 'digits:9')
+                ->creationRules('unique:users,phone')
+                ->updateRules('unique:users,phone,{{resourceId}}'),
 
             Password::make('Password')
                 ->onlyOnForms()
