@@ -49,8 +49,8 @@ class Article extends Resource
             TextWithSlug::make('Title')->slug('slug'),
 
             Slug::make('Slug')
-                ->creationRules('unique:categories,slug')
-                ->updateRules('unique:categories,slug,{{resourceId}}'),
+                ->creationRules('unique:articles,slug')
+                ->updateRules('unique:articles,slug,{{resourceId}}'),
 
             Trix::make('Content'),
 

@@ -45,7 +45,7 @@ class Category extends Resource
         return [
             ID::make()->sortable(),
 
-            TextWithSlug::make('name')->slug('slug'),
+            TextWithSlug::make('Name')->slug('slug'),
 
             Slug::make('Slug')
                 ->creationRules('unique:categories,slug')
