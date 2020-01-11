@@ -35,6 +35,8 @@
         @include('partials.header')
 
         @yield('content')
+
+        @include('sweetalert::alert')
     </div>
 
     <!-- Scripts -->

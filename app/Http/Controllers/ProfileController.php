@@ -25,6 +25,6 @@ class ProfileController extends Controller
 
         $user->update($data);
 
-        return redirect()->route('profile.index');
+        return redirect()->route('profile.index')->with('success', 'Thông tin đã được cập nhật');
     }
 }

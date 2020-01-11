@@ -17,15 +17,14 @@
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0",
         "magnus/agenda": "*",
-        "magnus/global-agenda": "*"
+        "magnus/global-agenda": "*",
+        "realrashid/sweet-alert": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laracasts/generators": "^1.1",
-        "laravel-frontend-presets/tailwindcss": "^2.2",
-        "laravel/ui": "^1.1",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0"

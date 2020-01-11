@@ -17,7 +17,7 @@ class SocialAuthController
         try {
             $socialUser = Socialite::driver('facebook')->user();
         } catch (\Exception $e) {
-            return redirect()->route('landing')->with('message', 'Social Authentication Failed');
+            return redirect()->route('landing')->with('message', 'Đăng nhập không thành công');
         }
 
         if (! ($user = User::where('email', $socialUser->getEmail())->first())) {
@@ -29,11 +29,11 @@ class SocialAuthController
                 'auth_type'         => 'facebook'
             ]);
         } elseif ($user->auth_type != 'facebook') {
-            return redirect()->back()->with('message', 'This email is already registered. Please log in using your password.');
+            return redirect()->back()->with('message', 'Bạn đã có tài khoản dùng Email này. Vui lòng đăng nhập bằng mật khẩu.');
         }
 
         auth()->login($user);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', "Magnus chào bạn :)");
     }
 }

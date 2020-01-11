@@ -25,6 +25,6 @@ class SecurityController extends Controller
             'password' => bcrypt($data['password'])
         ]);
 
-        return redirect()->route('security.index');
+        return redirect()->route('security.index')->with('success', 'Đã thay đổi mật khẩu');
     }
 }
