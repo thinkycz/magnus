@@ -73,6 +73,9 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace('App\\Http\\Controllers')
             ->group(function () {
                 Auth::routes();
+
+                Route::get('social-auth/facebook', 'Auth\SocialAuthController@redirectToFacebook')->name('social_auth.facebook');
+                Route::get('social-auth/facebook/callback', 'Auth\SocialAuthController@handleFacebookCallback');
             });
     }
 }

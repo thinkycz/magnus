@@ -14,6 +14,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/nova": "^2.5",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0",
         "magnus/agenda": "*",
         "magnus/global-agenda": "*"
