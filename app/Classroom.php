@@ -25,6 +25,10 @@ class Classroom extends Model
 
     public function getTitleAttribute()
     {
-        return $this->course->name . ' - ' . $this->starts_at->englishDayOfWeek . ' ' . $this->starts_at->format('H:i');
+        if ($this->course) {
+            return $this->course->name . ' - ' . $this->starts_at->englishDayOfWeek . ' ' . $this->starts_at->format('H:i');
+        }
+
+        return null;
     }
 }

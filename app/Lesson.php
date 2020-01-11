@@ -6,13 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-    protected $fillable = ['starts_at', 'ends_at'];
+    protected $fillable = ['starts_at', 'ends_at', 'course_id'];
     protected $dates = ['starts_at', 'ends_at'];
     protected $appends = ['title', 'url'];
 
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 
     public function students()
@@ -32,7 +37,11 @@ class Lesson extends Model
 
     public function getTitleAttribute()
     {
-        return $this->classroom->course->name . ' - ' . $this->starts_at->format('j.n.Y H:i');
+        if ($this->classroom && $this->classroom->course) {
+            return $this->classroom->course->name . ' - ' . $this->starts_at->format('j.n.Y H:i');
+        }
+
+        return null;
     }
 
     public function getUrlAttribute()

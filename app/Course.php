@@ -20,7 +20,7 @@ class Course extends Model
 
     public function lessons()
     {
-        return $this->hasManyThrough(Lesson::class, Classroom::class);
+        return $this->hasMany(Lesson::class);
     }
 
     public function lectors()

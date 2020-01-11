@@ -41,7 +41,7 @@ class LessonPolicy
      */
     public function create(User $user)
     {
-        return false;
+        return $user->is_admin;
     }
 
     /**

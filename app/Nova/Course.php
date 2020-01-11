@@ -43,9 +43,13 @@ class Course extends Resource
     public static function indexQuery(NovaRequest $request, $query)
     {
         return $query->when(!auth()->user()->is_admin, function (Builder $query) {
-            return $query->whereHas('lectors', function (Builder $query) {
-                return $query->where('user_id', auth()->user()->id);
-            });
+            return $query
+                ->whereHas('lectors', function (Builder $query) {
+                    return $query->where('user_id', auth()->user()->id);
+                })
+                ->orWhereHas('classroom.lectors', function (Builder $query) {
+                    return $query->where('user_id', auth()->user()->id);
+                });
         });
     }
 
@@ -90,6 +94,8 @@ class Course extends Resource
             })->onlyOnIndex(),
 
             HasMany::make('Classrooms'),
+
+            HasMany::make('Lessons'),
 
             BelongsToMany::make('Students')
                 ->fields(new SubscriptionFields())

@@ -44,10 +44,8 @@ class Lesson extends Resource
                     ->whereHas('lectors', function (Builder $query) {
                         return $query->where('user_id', auth()->user()->id);
                     })
-                    ->orWhereHas('classroom', function (Builder $query) {
-                        return $query->whereHas('lectors', function (Builder $query) {
-                            return $query->where('user_id', auth()->user()->id);
-                        });
+                    ->orWhereHas('classroom.lectors', function (Builder $query) {
+                        return $query->where('user_id', auth()->user()->id);
                     });
             });
     }
@@ -61,16 +59,21 @@ class Lesson extends Resource
     public function fields(Request $request)
     {
         return [
+            BelongsTo::make('Course')
+                ->nullable(),
+
             BelongsTo::make('Classroom')
-                ->hideWhenUpdating(),
+                ->nullable(),
 
             DateTime::make('Starts At')
                 ->format('D.M.Y HH:mm')
-                ->sortable(),
+                ->sortable()
+                ->rules('required'),
 
             DateTime::make('Ends At')
                 ->format('D.M.Y HH:mm')
-                ->sortable(),
+                ->sortable()
+                ->rules('required'),
 
             BelongsToMany::make('Attended Students', 'students', Student::class)
                 ->searchable(),
