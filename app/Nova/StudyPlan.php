@@ -2,25 +2,21 @@
 
 namespace App\Nova;
 
-use App\Nova\Metrics\NewUsers;
-use App\Nova\Metrics\UsersOverTime;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasOne;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\MorphMany;
-use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class User extends Resource
+class StudyPlan extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\User::class;
+    public static $model = \App\StudyPlan::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -34,9 +30,9 @@ class User extends Resource
      *
      * @var array
      */
-    public static $search = ['name', 'email', 'phone'];
+    public static $search = ['name'];
 
-    public static $group = 'Overview';
+    public static $group = 'Materials';
 
     /**
      * Get the fields displayed by the resource.
@@ -47,35 +43,13 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            Gravatar::make(),
+            ID::make()->sortable(),
 
-            Text::make('Name')
-                ->rules('required', 'max:255')
-                ->sortable(),
+            Text::make('Name'),
 
-            Text::make('Email')
-                ->rules('email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}')
-                ->sortable(),
+            Files::make('Materials'),
 
-            Number::make('Phone')
-                ->rules('required', 'digits:9')
-                ->creationRules('unique:users,phone')
-                ->updateRules('unique:users,phone,{{resourceId}}'),
-
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
-
-            Boolean::make('Is Admin'),
-
-            MorphMany::make('Notes'),
-
-            HasOne::make('Lector Profile', 'Lector', Lector::class),
-
-            HasOne::make('Student Profile', 'Student', Student::class),
+            Images::make('Images')
         ];
     }
 
@@ -87,10 +61,7 @@ class User extends Resource
      */
     public function cards(Request $request)
     {
-        return [
-            new NewUsers(),
-            new UsersOverTime()
-        ];
+        return [];
     }
 
     /**
