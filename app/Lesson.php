@@ -8,7 +8,7 @@ class Lesson extends Model
 {
     protected $fillable = ['starts_at', 'ends_at', 'course_id'];
     protected $dates = ['starts_at', 'ends_at'];
-    protected $appends = ['title', 'url'];
+    protected $appends = ['title', 'url', 'color'];
 
     public function classroom()
     {
@@ -47,5 +47,10 @@ class Lesson extends Model
     public function getUrlAttribute()
     {
         return url('admin/resources/lessons/' . $this->id);
+    }
+
+    public function getColorAttribute()
+    {
+        return $this->course->color ?? null;
     }
 }

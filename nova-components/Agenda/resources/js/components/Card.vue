@@ -47,7 +47,8 @@
                             title: event.title,
                             start: event.starts_at,
                             end: event.ends_at,
-                            url: event.url
+                            url: event.url,
+                            color: event.color
                         })
                     })
                 }

@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Timothyasp\Color\Color;
 
 class Course extends Resource
 {
@@ -85,13 +86,11 @@ class Course extends Resource
                 ->format('%.2n' . ' Kč')
                 ->sortable(),
 
-            Text::make('Number of Classrooms', function () {
-                return $this->classrooms->count();
-            })->onlyOnIndex(),
-
-            Text::make('Number of Lessons', function () {
+            Text::make('Lessons', function () {
                 return $this->lessons->count();
             })->onlyOnIndex(),
+
+            Color::make('Color'),
 
             HasMany::make('Classrooms'),
 
