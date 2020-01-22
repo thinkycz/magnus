@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class SecurityController extends Controller
 {
@@ -12,7 +12,7 @@ class SecurityController extends Controller
     {
         $user = auth()->user();
 
-        return view('security', compact('user'));
+        return view('app.security', compact('user'));
     }
 
     public function update(Request $request, User $user)

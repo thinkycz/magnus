@@ -9,8 +9,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @section('styles')
+        <!-- Styles -->
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @show
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/favicons/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/favicons/apple-icon-60x60.png') }}">
@@ -30,16 +32,21 @@
     <meta name="msapplication-TileImage" content="{{ asset('img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 </head>
+
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
         @include('partials.nav')
 
         @yield('content')
 
+        @include('partials.footer')
+
         @include('sweetalert::alert')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}"></script>
+    @section('scripts')
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}"></script>
+    @show
 </body>
 </html>

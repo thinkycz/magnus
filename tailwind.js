@@ -8,6 +8,7 @@ module.exports = {
   },
   variants: {
       borderColor: ['responsive', 'hover', 'group-hover'],
+      display: ['responsive', 'hover', 'group-hover'],
   },
   plugins: []
 };
