@@ -26,7 +26,7 @@
             </ul>
             <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full">
                 <li class="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">Thông tin</li>
-                <li><a href="{{ route('category', 'magnus') }}" class="inline-block py-2 px-3 text-gray-500 hover:text-white no-underline">Về TT Magnus</a></li>
+                <li><a href="{{ route('category', 've-tt-magnus') }}" class="inline-block py-2 px-3 text-gray-500 hover:text-white no-underline">Về TT Magnus</a></li>
                 <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-white no-underline">Các khoá học</a></li>
                 <li><a href="{{ route('contact.index') }}" class="inline-block py-2 px-3 text-gray-500 hover:text-white no-underline">Liên hệ</a></li>
             </ul>

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         factory(Category::class)->create(['name' => 'Luyện nói tiếng Séc', 'slug' => 'luyen-noi-tieng-sec']);
         factory(Category::class)->create(['name' => 'Phát âm tiếng Séc', 'slug' => 'phat-am-tieng-sec']);
         factory(Category::class)->create(['name' => 'Ngữ pháp tiếng Séc', 'slug' => 'ngu-phap-tieng-sec']);
+        factory(Category::class)->create(['name' => 'Về TT Magnus', 'slug' => 've-tt-magnus']);
     }
 }

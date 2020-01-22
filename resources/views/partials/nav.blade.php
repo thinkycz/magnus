@@ -24,7 +24,7 @@
                 <a href="#" class="font-semibold text-gray-900 hover:text-orange-500">Các khoá học</a>
             </li>
             <li class="mr-8">
-                <a href="{{ route('category', 'magnus') }}" class="font-semibold text-gray-900 hover:text-orange-500">Về TT Magnus</a>
+                <a href="{{ route('category', 've-tt-magnus') }}" class="font-semibold text-gray-900 hover:text-orange-500">Về TT Magnus</a>
             </li>
             <li class="mr-8">
                 <a href="{{ route('contact.index') }}" class="font-semibold text-gray-900 hover:text-orange-500">Liên hệ</a>
