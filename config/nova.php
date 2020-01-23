@@ -102,4 +102,47 @@ return [
     */
 
     'pagination' => 'simple',
+
+    'froala-field' => [
+        'options' => [
+            'toolbarButtons' => [
+                [
+                    'bold',
+                    'italic',
+                    'underline',
+                    'paragraphFormat',
+                ],
+                [
+                    'alignLeft',
+                    'alignCenter',
+                    'alignRight',
+                    'alignJustify',
+                ],
+                [
+                    'formatOL',
+                    'formatUL',
+                    'lineHeight',
+                    'outdent',
+                    'indent',
+                    'quote'
+                ],
+                [
+                    'insertImage',
+                    'insertFile',
+                    'insertLink',
+                    'insertVideo',
+                    'insertTable',
+                    'emoticons',
+                    'specialCharacters'
+                ],
+                [
+                    'undo',
+                    'redo',
+                    'fullscreen',
+                    'print',
+                    'html',
+                ],
+            ],
+        ],
+    ]
 ];

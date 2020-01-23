@@ -13,7 +13,7 @@
                     <form class="w-full p-6" method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 
-                        <p class="leading-normal">
+                        <p>
                             {{ __('Please confirm your password before continuing.') }}
                         </p>
 

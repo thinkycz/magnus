@@ -12,6 +12,7 @@
         "benjaminhirsch/nova-slug-field": "^1.2",
         "ebess/advanced-nova-media-library": "^2.9",
         "fideloper/proxy": "^4.0",
+        "froala/nova-froala-field": "^3.2",
         "laravel/framework": "^6.2",
         "laravel/nova": "^2.5",
         "laravel/socialite": "^4.3",

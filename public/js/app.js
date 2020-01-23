@@ -19226,10 +19226,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
+/***/ "./resources/css/app.scss":
+/*!********************************!*\
+  !*** ./resources/css/app.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19292,14 +19292,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
+/*!************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/app.scss ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/thinky/Code/magnus/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/thinky/Code/magnus/resources/css/app.css */"./resources/css/app.css");
+module.exports = __webpack_require__(/*! /Users/thinky/Code/magnus/resources/css/app.scss */"./resources/css/app.scss");
 
 
 /***/ })

@@ -128,6 +128,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
       <path value="$PROJECT_DIR$/vendor/timothyasp/nova-color-field" />
+      <path value="$PROJECT_DIR$/vendor/froala/nova-froala-field" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

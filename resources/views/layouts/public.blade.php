@@ -33,7 +33,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="bg-gray-100 h-screen antialiased leading-none">
+<body class="bg-gray-100 h-screen antialiased">
     <div id="app">
         @include('partials.nav')
 

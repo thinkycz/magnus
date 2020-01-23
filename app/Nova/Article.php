@@ -4,10 +4,10 @@ namespace App\Nova;
 
 use Benjaminhirsch\NovaSlugField\Slug;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
+use Froala\NovaFroalaField\Froala;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Article extends Resource
@@ -52,7 +52,8 @@ class Article extends Resource
                 ->creationRules('unique:articles,slug')
                 ->updateRules('unique:articles,slug,{{resourceId}}'),
 
-            Trix::make('Content'),
+            Froala::make('Content')
+                ->withFiles('public'),
 
             BelongsTo::make('Category')
         ];

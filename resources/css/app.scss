@@ -1,0 +1,51 @@
+@tailwind base;
+
+@tailwind components;
+
+#menu-toggle:checked + #menu {
+    display: block;
+}
+
+.editor {
+    h1 {
+        @apply text-3xl font-semibold;
+    }
+
+    h2 {
+        @apply text-2xl font-semibold;
+    }
+
+    h3 {
+        @apply text-xl font-semibold;
+    }
+
+    h4 {
+        @apply text-lg font-semibold;
+    }
+
+    ul {
+        @apply list-disc pl-4;
+    }
+
+    ol {
+        @apply list-decimal pl-4;
+    }
+
+    pre {
+        @apply p-4 bg-gray-300 rounded-lg overflow-x-auto;
+    }
+
+    blockquote {
+        @apply border-l-4 border-gray-500 pl-4;
+    }
+
+    table td {
+        @apply border-2;
+    }
+
+    .fr-emoticon {
+        @apply inline-block w-6 h-6;
+    }
+}
+
+@tailwind utilities;

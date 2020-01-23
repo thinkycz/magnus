@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
+use Froala\NovaFroalaField\Froala;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Note extends Resource
@@ -45,9 +45,11 @@ class Note extends Resource
         return [
             ID::make()->sortable(),
 
-            Trix::make('Content'),
+            Froala::make('Content')
+                ->withFiles('public'),
 
-            Text::make('Excerpt')->onlyOnIndex(),
+            Text::make('Excerpt')
+                ->onlyOnIndex(),
 
             BelongsTo::make('Author', 'author', User::class)
                 ->exceptOnForms(),

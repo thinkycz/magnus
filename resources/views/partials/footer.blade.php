@@ -12,8 +12,8 @@
             </svg>
 
             <div class="text-sm">
-                <p class="py-2 pl-6 text-gray-500 leading-normal">TTTM Sapa, nhà 7 tầng<br>Libušská 319/126<br>14200 Praha 4</p>
-                <p class="py-2 pl-6 text-gray-500 leading-normal">+420 728 005 266<br>info@mgns.cz</p>
+                <p class="py-2 pl-6 text-gray-500">TTTM Sapa, nhà 7 tầng<br>Libušská 319/126<br>14200 Praha 4</p>
+                <p class="py-2 pl-6 text-gray-500">+420 728 005 266<br>info@mgns.cz</p>
             </div>
         </a>
         <div class="w-1/2 block sm:flex text-sm mt-6 lg:mt-0">

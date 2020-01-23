@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Fields\SubscriptionFields;
 use App\Nova\Metrics\CoursesOverTime;
 use App\Nova\Metrics\NewCourses;
+use Froala\NovaFroalaField\Froala;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -12,7 +13,6 @@ use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Timothyasp\Color\Color;
 
@@ -67,7 +67,8 @@ class Course extends Resource
                 ->rules('required')
                 ->sortable(),
 
-            Trix::make('Description')
+            Froala::make('Description')
+                ->withFiles('public')
                 ->rules('required'),
 
             Date::make('Starts At')
