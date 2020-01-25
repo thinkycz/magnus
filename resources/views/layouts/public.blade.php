@@ -9,8 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    @section('styles')
-        <!-- Styles -->
+@section('styles')
+    <!-- Styles -->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @show
 
@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/favicons/apple-icon-144x144.png') }}">
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/favicons/apple-icon-152x152.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicons/apple-icon-180x180.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/favicons/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/favicons/android-icon-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favicons/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicons/favicon-16x16.png') }}">
@@ -34,39 +34,46 @@
 </head>
 
 <body class="bg-gray-100 h-screen antialiased">
-    <div id="app">
-        @include('partials.nav')
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v5.0'
+        });
+    };
 
-        @yield('content')
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-        @include('partials.footer')
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="2105511979512882"
+     logged_in_greeting="Chào bạn, Magnus có thể giúp bạn điều gì?"
+     logged_out_greeting="Chào bạn, Magnus có thể giúp bạn điều gì?">
+</div>
 
-        @include('sweetalert::alert')
-    </div>
+<div id="app">
+    @include('partials.nav')
 
-    @section('scripts')
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}"></script>
-    @show
+    @yield('content')
 
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId            : '3409606382447808',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v2.11'
-            });
-        };
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    @include('partials.footer')
 
-    <div class="fb-customerchat" page_id="2105511979512882"></div>
+    @include('sweetalert::alert')
+</div>
+
+@section('scripts')
+    <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}"></script>
+@show
 </body>
 </html>
