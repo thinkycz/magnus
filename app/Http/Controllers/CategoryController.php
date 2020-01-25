@@ -9,6 +9,8 @@ class CategoryController extends Controller
 {
     public function __invoke(Category $category)
     {
-        return view('category', compact('category'));
+        $articles = $category->articles()->paginate();
+
+        return view('category', compact('category', 'articles'));
     }
 }
