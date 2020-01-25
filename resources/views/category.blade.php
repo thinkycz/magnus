@@ -9,7 +9,7 @@
             </div>
 
             @foreach($articles as $article)
-                <div class="p-4 bg-gray-200 rounded mb-4">
+                <div class="p-4 bg-white rounded shadow-xl mb-4">
                     <h3 class="text-xl font-semibold text-gray-800 hover:underline">
                         <a href="{{ $article->show_route }}">{{ $article->title }}</a>
                     </h3>

@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function __invoke(Category $category)
     {
-        $articles = $category->articles()->paginate();
+        $articles = $category->articles()->latest()->paginate();
 
         return view('category', compact('category', 'articles'));
     }

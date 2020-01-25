@@ -21,7 +21,7 @@
                 </div>
             </li>
             <li class="mr-8">
-                <a href="#" class="font-semibold text-gray-900 hover:text-orange-500">Các khoá học</a>
+                <a href="{{ route('courses') }}" class="font-semibold text-gray-900 hover:text-orange-500">Các khoá học</a>
             </li>
             <li class="mr-8">
                 <a href="{{ route('category', 've-tt-magnus') }}" class="font-semibold text-gray-900 hover:text-orange-500">Về TT Magnus</a>
