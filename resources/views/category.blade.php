@@ -16,7 +16,7 @@
                     <p class="text-xs font-semibold text-gray-600 m-0">{{ $article->read_time }}</p>
 
                     <div class="content mt-4 mb-6">
-                        {{ $article->excerpt }}
+                        {!! $article->excerpt !!}
                     </div>
 
                     <a class="font-semibold bg-green-500 hover:bg-green-600 text-white rounded px-4 py-2" href="{{ $article->show_route }}">Đọc tiếp...</a>
