@@ -49,10 +49,6 @@
         <script src="{{ mix('js/app.js') }}"></script>
     @show
 
-    <div class="fb-customerchat"
-         page_id="2105511979512882"
-         minimized="true">
-    </div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -70,5 +66,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    <div class="fb-customerchat" page_id="2105511979512882"></div>
 </body>
 </html>
