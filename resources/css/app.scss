@@ -46,6 +46,10 @@
     .fr-emoticon {
         @apply inline-block w-6 h-6;
     }
+
+    [data-f-id="pfb"] {
+        display: none !important;
+    }
 }
 
 @tailwind utilities;

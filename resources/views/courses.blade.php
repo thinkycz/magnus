@@ -12,7 +12,7 @@
                     <h3 class="text-xl font-semibold text-gray-800">{{ $course->name }}</h3>
                     <p class="text-xs font-semibold text-gray-600 m-0">{{ $course->starts_at->format('j.n.Y') . ' - ' . $course->ends_at->format('j.n.Y') }}</p>
 
-                    <div class="content mt-4">
+                    <div class="editor mt-4">
                         {!! $course->description !!}
                     </div>
 
