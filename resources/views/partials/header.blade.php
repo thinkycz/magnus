@@ -25,10 +25,10 @@
             <nav>
                 <ul class="lg:flex items-center justify-between text-sm font-medium text-gray-700 pt-4 lg:pt-0">
                     <li>
-                        <a class="lg:p-4 py-3 px-0 block text-orange-500 font-bold" href="#">Trang chủ</a>
+                        <a class="lg:p-4 py-3 px-0 block text-orange-500 font-bold" href="#">Sinh viên</a>
                     </li>
                     <li>
-                        <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 lg:mb-0 mb-2" href="#">Liên hệ</a>
+                        <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900" href="#">Phụ huynh</a>
                     </li>
                     @can('viewNova')
                         <li>

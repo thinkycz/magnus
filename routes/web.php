@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\App\DashboardController;
+use App\Http\Controllers\App\Student\CourseController;
 use App\Http\Controllers\App\NotStudentController;
 use App\Http\Controllers\App\ProfileController;
 use App\Http\Controllers\App\SecurityController;
+use App\Http\Controllers\App\Student\ExamController;
+use App\Http\Controllers\App\Student\FeedbackController;
+use App\Http\Controllers\App\Student\HomeworkController;
 
 Route::get('logout', function () {
     auth()->logout();
@@ -13,8 +16,13 @@ Route::get('logout', function () {
 
 Route::get('not-student', [NotStudentController::class, 'index'])->name('not_student');
 
-Route::group(['middleware' => 'student'], function () {
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::redirect('/dashboard', '/student/courses')->name('dashboard');
+
+Route::group(['middleware' => 'student', 'prefix' => 'student', 'as' => 'student.'], function () {
+    Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+    Route::get('exams', [ExamController::class, 'index'])->name('exams.index');
+    Route::get('feedbacks', [FeedbackController::class, 'index'])->name('feedbacks.index');
+    Route::get('homeworks', [HomeworkController::class, 'index'])->name('homeworks.index');
 });
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');

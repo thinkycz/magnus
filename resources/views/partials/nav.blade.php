@@ -26,9 +26,6 @@
             <li class="mr-8">
                 <a href="{{ route('category', 've-tt-magnus') }}" class="font-semibold text-gray-900 hover:text-orange-500">Về TT Magnus</a>
             </li>
-            <li class="mr-8">
-                <a href="{{ route('contact.index') }}" class="font-semibold text-gray-900 hover:text-orange-500">Liên hệ</a>
-            </li>
             @auth
                 <li>
                     <a href="{{ route('dashboard') }}" class="text-white ml-4 py-3 px-6 rounded-full bg-gray-800 font-bold hidden sm:block bg-green-500 hover:bg-green-600">Vào ứng dụng</a>
