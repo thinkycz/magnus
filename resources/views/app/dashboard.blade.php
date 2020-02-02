@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('main')
+    @include('partials.dashboard-nav')
+
     <div class="w-full bg-white rounded-lg shadow-lg mx-auto my-8">
         <div class="px-4 py-5 border-b-2 flex items-center justify-between">
             <div>
