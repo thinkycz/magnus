@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class Lector extends Resource
 {
@@ -65,17 +66,19 @@ class Lector extends Resource
                 ->rules('required')
                 ->hideFromIndex(),
 
-            Text::make('Past Experience')
-                ->hideFromIndex(),
+            new Panel('Additional Information', [
+                Text::make('Past Experience')
+                    ->hideFromIndex(),
 
-            Text::make('Teaches Subjects')
-                ->hideFromIndex(),
+                Text::make('Teaches Subjects')
+                    ->hideFromIndex(),
 
-            Text::make('Available Days')
-                ->hideFromIndex(),
+                Text::make('Available Days')
+                    ->hideFromIndex(),
 
-            Date::make('Birth Date')
-                ->hideFromIndex(),
+                Date::make('Birth Date')
+                    ->hideFromIndex(),
+            ]),
 
             BelongsTo::make('User')
                 ->nullable()

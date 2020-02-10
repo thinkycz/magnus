@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class Student extends Resource
 {
@@ -80,36 +81,40 @@ class Student extends Resource
                 ->rules('required')
                 ->hideFromIndex(),
 
-            Text::make('School')
-                ->hideFromIndex(),
-
-            Text::make('Hobbies')
-                ->hideFromIndex(),
-
-            Text::make('Origin')
-                ->hideFromIndex(),
-
-            Text::make('Parent Name')
-                ->hideFromIndex(),
-
-            Text::make('Parent Phone')
-                ->hideFromIndex(),
-
-            Date::make('Birth Date')
-                ->hideFromIndex(),
-
             Boolean::make('Is Active'),
 
             BelongsTo::make('User')
                 ->nullable()
                 ->searchable(),
 
+            new Panel('Additional Information', [
+                Text::make('School')
+                    ->hideFromIndex(),
+
+                Text::make('Hobbies')
+                    ->hideFromIndex(),
+
+                Text::make('Origin')
+                    ->hideFromIndex(),
+
+                Date::make('Birth Date')
+                    ->hideFromIndex(),
+            ]),
+
+            new Panel('Parent Information', [
+                Text::make('Parent Name')
+                    ->hideFromIndex(),
+
+                Text::make('Parent Phone')
+                    ->hideFromIndex(),
+            ]),
+
             BelongsToMany::make('Courses')
                 ->fields(new SubscriptionFields())
                 ->searchable(),
 
             BelongsToMany::make('Lessons')
-                ->searchable()
+                ->searchable(),
         ];
     }
 

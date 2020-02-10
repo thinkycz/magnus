@@ -130,6 +130,8 @@
       <path value="$PROJECT_DIR$/vendor/timothyasp/nova-color-field" />
       <path value="$PROJECT_DIR$/vendor/froala/nova-froala-field" />
       <path value="$PROJECT_DIR$/vendor/mtownsend/read-time" />
+      <path value="$PROJECT_DIR$/vendor/lab404/laravel-impersonate" />
+      <path value="$PROJECT_DIR$/vendor/kabbouchi/nova-impersonate" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

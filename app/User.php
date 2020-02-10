@@ -51,4 +51,14 @@ class User extends Authenticatable
     {
         return $this->morphMany(Note::class, 'notable');
     }
+
+    public function canImpersonate()
+    {
+        return $this->is_admin;
+    }
+
+    public function canBeImpersonated()
+    {
+        return !$this->canImpersonate();
+    }
 }
