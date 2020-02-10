@@ -19,11 +19,16 @@
             </tr>
             </thead>
             <tbody>
-            @forelse($course->lessons as $lesson)
+            @forelse($course->lessons()->latest()->get() as $lesson)
                 <tr class="border-t border-gray-300">
                     <td class="p-4">{{ $lesson->title }}</td>
                     <td class="p-4">{{ $lesson->topic }}</td>
-                    <td class="p-4">{{ $lesson->homework_count }}</td>
+                    <td class="p-4">
+                        <a href="{{ route('student.homeworks.index') }}"
+                           class="px-2 py-1 text-xs rounded bg-blue-500 hover:bg-blue-600 text-white font-semibold">
+                            <span>{{ $lesson->homeworks->count() }} bài tập</span>
+                        </a>
+                    </td>
                 </tr>
             @empty
                 <tr>

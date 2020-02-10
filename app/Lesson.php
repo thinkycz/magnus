@@ -35,6 +35,11 @@ class Lesson extends Model
         return $this->morphMany(Note::class, 'notable');
     }
 
+    public function homeworks()
+    {
+        return $this->hasMany(Homework::class);
+    }
+
     public function getTitleAttribute()
     {
         if ($this->classroom && $this->classroom->course) {

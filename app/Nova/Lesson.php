@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -85,6 +86,8 @@ class Lesson extends Resource
                 ->searchable(),
 
             MorphMany::make('Notes'),
+
+            HasMany::make('Homeworks'),
 
             Text::make('Number of Notes', function () {
                 return $this->notes->count();
