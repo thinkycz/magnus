@@ -18,37 +18,40 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="py-3 pl-1 w-full flex items-center focus:outline-none focus-visible:underline">
+                    <a href="{{ route('student.homeworks.index') }}"
+                       class="py-3 pl-1 w-full flex items-center text-gray-700 hover:text-gray-900 focus:outline-none focus-visible:underline {{ Request::routeIs('student.homeworks.*') ? 'text-green-600 hover:text-green-600' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                             class="h-6 w-6 text-gray-600 fill-current">
+                             class="h-6 w-6 fill-current">
                             <path class="heroicon-ui"
                                   d="M13 20v-5h-2v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.59l-.3.3a1 1 0 1 1-1.4-1.42l9-9a1 1 0 0 1 1.4 0l9 9a1 1 0 0 1-1.4 1.42l-.3-.3V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zm5 0v-9.59l-6-6-6 6V20h3v-5c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v5h3z"/>
                         </svg>
-                        <span class="ml-3 text-sm font-medium transition-all ease-out transition-medium text-gray-700">
+                        <span class="ml-3 text-sm font-medium transition-all ease-out transition-medium">
                         Bài tập về nhà
                     </span>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="py-3 pl-1 w-full flex items-center focus:outline-none focus-visible:underline">
+                    <a href="{{ route('student.exams.index') }}"
+                       class="py-3 pl-1 w-full flex items-center text-gray-700 hover:text-gray-900 focus:outline-none focus-visible:underline {{ Request::routeIs('student.exams.*') ? 'text-green-600 hover:text-green-600' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                             class="h-6 w-6 text-gray-600 fill-current">
+                             class="h-6 w-6 fill-current">
                             <path class="heroicon-ui"
                                   d="M6.3 12.3l10-10a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-10 10a1 1 0 0 1-.7.3H7a1 1 0 0 1-1-1v-4a1 1 0 0 1 .3-.7zM8 16h2.59l9-9L17 4.41l-9 9V16zm10-2a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h6a1 1 0 0 1 0 2H4v14h14v-6z"/>
                         </svg>
-                        <span class="ml-3 text-sm font-medium transition-all ease-out transition-medium text-gray-700">
+                        <span class="ml-3 text-sm font-medium transition-all ease-out transition-medium">
                         Các bài kiểm tra
                     </span>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="py-3 pl-1 w-full flex items-center focus:outline-none focus-visible:underline">
+                    <a href="{{ route('student.feedbacks.index') }}"
+                       class="py-3 pl-1 w-full flex items-center text-gray-700 hover:text-gray-900 focus:outline-none focus-visible:underline {{ Request::routeIs('student.feedbacks.*') ? 'text-green-600 hover:text-green-600' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                             class="h-6 w-6 text-gray-600 fill-current">
+                             class="h-6 w-6 fill-current">
                             <path class="heroicon-ui"
                                   d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                         </svg>
-                        <span class="ml-3 text-sm font-medium transition-all ease-out transition-medium text-gray-700">
+                        <span class="ml-3 text-sm font-medium transition-all ease-out transition-medium">
                         Hạnh kiểm của học viên
                     </span>
                     </a>

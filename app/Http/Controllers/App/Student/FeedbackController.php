@@ -9,6 +9,6 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('app.student.courses');
+        return view('app.student.feedbacks.index');
     }
 }

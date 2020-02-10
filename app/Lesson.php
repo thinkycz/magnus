@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-    protected $fillable = ['starts_at', 'ends_at', 'course_id'];
+    protected $fillable = ['starts_at', 'ends_at', 'course_id', 'topic'];
     protected $dates = ['starts_at', 'ends_at'];
     protected $appends = ['title', 'url', 'color'];
 
@@ -41,7 +41,7 @@ class Lesson extends Model
             return $this->classroom->course->name . ' - ' . $this->starts_at->format('j.n.Y H:i');
         }
 
-        return null;
+        return $this->starts_at->format('j.n.Y H:i');
     }
 
     public function getUrlAttribute()

@@ -9,6 +9,6 @@ class ExamController extends Controller
 {
     public function index()
     {
-        return view('app.student.courses');
+        return view('app.student.exams.index');
     }
 }

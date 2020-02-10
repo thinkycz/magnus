@@ -59,6 +59,9 @@ class Lesson extends Resource
     public function fields(Request $request)
     {
         return [
+            Text::make('Topic')
+                ->nullable(),
+
             BelongsTo::make('Course')
                 ->nullable(),
 

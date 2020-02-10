@@ -27,4 +27,14 @@ class Course extends Model
     {
         return $this->hasManyThrough(Lector::class, Classroom::class);
     }
+
+    public function getExcerptAttribute()
+    {
+        return str_limit(strip_tags($this->description), 240);
+    }
+
+    public function getNextLessonAttribute()
+    {
+        return $this->lessons()->whereDate('starts_at', '>=', now())->first();
+    }
 }

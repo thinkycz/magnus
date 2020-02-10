@@ -20,6 +20,8 @@ Route::redirect('/dashboard', '/student/courses')->name('dashboard');
 
 Route::group(['middleware' => 'student', 'prefix' => 'student', 'as' => 'student.'], function () {
     Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
+    Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
     Route::get('exams', [ExamController::class, 'index'])->name('exams.index');
     Route::get('feedbacks', [FeedbackController::class, 'index'])->name('feedbacks.index');
     Route::get('homeworks', [HomeworkController::class, 'index'])->name('homeworks.index');
@@ -30,3 +32,4 @@ Route::put('profile/{user}', [ProfileController::class, 'update'])->name('profil
 
 Route::get('security', [SecurityController::class, 'index'])->name('security.index');
 Route::put('security/{user}', [SecurityController::class, 'update'])->name('security.update');
+

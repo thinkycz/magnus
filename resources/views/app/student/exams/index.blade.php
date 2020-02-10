@@ -4,11 +4,11 @@
     <div class="w-full bg-white rounded-lg shadow-lg mx-auto my-8">
         <div class="px-4 py-5 border-b-2 flex items-center justify-between">
             <div>
-                <h3 class="text-xl font-semibold text-gray-900">Tiếng Séc giao tiếp A1</h3>
-                <p class="text-sm font-semibold text-gray-700">asdasd asdasd</p>
+                <h3 class="text-xl font-semibold text-gray-900">Exams</h3>
+                <p class="text-sm font-semibold text-gray-700">asdasd</p>
             </div>
 
-            <span class="text-sm bg-green-500 text-white px-4 py-2 rounded font-bold">Đã thanh toán</span>
+            <span class="text-sm bg-green-500 text-white px-4 py-2 rounded font-bold">Đã nộp bài</span>
         </div>
 
         <div class="p-4">
