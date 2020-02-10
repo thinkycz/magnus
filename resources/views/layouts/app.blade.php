@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1280">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -30,7 +30,7 @@
     <meta name="msapplication-TileImage" content="{{ asset('img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body class="bg-gray-200 h-screen antialiased">
+<body class="bg-gray-200 min-w-site h-screen antialiased">
     <div id="app">
         @include('partials.header')
 
