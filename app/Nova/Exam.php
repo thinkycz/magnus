@@ -43,6 +43,7 @@ class Exam extends Resource
                 ->rules('required', 'gte:0', 'lte:100'),
 
             Froala::make('Content')
+                ->withFiles('public')
                 ->nullable(),
 
             BelongsTo::make('Student')

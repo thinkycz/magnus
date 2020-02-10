@@ -13,7 +13,7 @@ class HomeworkController extends Controller
     {
         $homeworks = Homework::whereHas('lesson.course.students.user', function (Builder $query) {
             return $query->where('id', auth()->user()->id);
-        })->get();
+        })->latest()->paginate();
 
         return view('app.student.homeworks.index', compact('homeworks'));
     }

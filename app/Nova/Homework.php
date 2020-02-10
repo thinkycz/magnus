@@ -46,6 +46,7 @@ class Homework extends Resource
             Text::make('Title'),
 
             Froala::make('Description')
+                ->withFiles('public')
                 ->nullable(),
 
             BelongsTo::make('Lesson')

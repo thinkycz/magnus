@@ -39,6 +39,7 @@ class Feedback extends Resource
                 ->rules('required'),
 
             Froala::make('Content')
+                ->withFiles('public')
                 ->nullable(),
 
             BelongsTo::make('Student')

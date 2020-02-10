@@ -9,6 +9,8 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('app.student.feedbacks.index');
+        $feedbacks = auth()->user()->student->feedbacks()->latest()->paginate();
+
+        return view('app.student.feedbacks.index', compact('feedbacks'));
     }
 }
