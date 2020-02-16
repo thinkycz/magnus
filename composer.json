@@ -15,7 +15,7 @@
         "froala/nova-froala-field": "^3.2",
         "kabbouchi/nova-impersonate": "^1.1",
         "laravel/framework": "^6.2",
-        "laravel/nova": "^2.5",
+        "laravel/nova": "^2.10",
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0",
         "magnus/agenda": "*",

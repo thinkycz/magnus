@@ -9,9 +9,9 @@ use Froala\NovaFroalaField\Froala;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Timothyasp\Color\Color;
@@ -44,13 +44,9 @@ class Course extends Resource
     public static function indexQuery(NovaRequest $request, $query)
     {
         return $query->when(!auth()->user()->is_admin, function (Builder $query) {
-            return $query
-                ->whereHas('lectors', function (Builder $query) {
-                    return $query->where('user_id', auth()->user()->id);
-                })
-                ->orWhereHas('classroom.lectors', function (Builder $query) {
-                    return $query->where('user_id', auth()->user()->id);
-                });
+            return $query->whereHas('classrooms.lectors', function (Builder $query) {
+                return $query->where('user_id', auth()->user()->id);
+            });
         });
     }
 
@@ -83,8 +79,7 @@ class Course extends Resource
                 ->hideWhenUpdating()
                 ->sortable(),
 
-            Currency::make('Price')
-                ->format('%.2n' . ' Kč')
+            Number::make('Price')
                 ->sortable(),
 
             Text::make('Lessons', function () {

@@ -47,10 +47,8 @@ class Student extends Resource
     public static function indexQuery(NovaRequest $request, $query)
     {
         return $query->when(!auth()->user()->is_admin, function (Builder $query) {
-            return $query->whereHas('courses', function (Builder $query) {
-                return $query->whereHas('lectors', function (Builder $query) {
-                    return $query->where('lectors.user_id', auth()->user()->id);
-                });
+            return $query->whereHas('courses.classrooms.lectors', function (Builder $query) {
+                return $query->where('user_id', auth()->user()->id);
             });
         });
     }

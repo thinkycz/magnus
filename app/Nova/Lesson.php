@@ -45,8 +45,10 @@ class Lesson extends Resource
                     ->whereHas('lectors', function (Builder $query) {
                         return $query->where('user_id', auth()->user()->id);
                     })
-                    ->orWhereHas('classroom.lectors', function (Builder $query) {
-                        return $query->where('user_id', auth()->user()->id);
+                    ->orWhereHas('classroom', function (Builder $query) {
+                        return $query->whereHas('lectors', function (Builder $query) {
+                            return $query->where('user_id', auth()->user()->id);
+                        });
                     });
             });
     }
