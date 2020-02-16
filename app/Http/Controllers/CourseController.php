@@ -9,7 +9,10 @@ class CourseController extends Controller
 {
     public function __invoke()
     {
-        $courses = Course::whereDate('ends_at', '>', now()->toDateTimeString())->latest()->paginate();
+        $courses = Course::where('is_public', true)
+            ->whereDate('ends_at', '>', now()->toDateTimeString())
+            ->latest()
+            ->paginate();
 
         return view('courses', compact('courses'));
     }

@@ -9,6 +9,7 @@ use Froala\NovaFroalaField\Froala;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Number;
@@ -63,6 +64,9 @@ class Course extends Resource
                 ->rules('required')
                 ->sortable(),
 
+            Text::make('Internal Name')
+                ->sortable(),
+
             Froala::make('Description')
                 ->withFiles('public')
                 ->rules('required'),
@@ -80,13 +84,14 @@ class Course extends Resource
                 ->sortable(),
 
             Number::make('Price')
+                ->hideFromIndex()
                 ->sortable(),
 
-            Text::make('Lessons', function () {
-                return $this->lessons->count();
-            })->onlyOnIndex(),
+            Color::make('Color')
+                ->sortable(),
 
-            Color::make('Color'),
+            Boolean::make('Is Public')
+                ->sortable(),
 
             HasMany::make('Classrooms'),
 
