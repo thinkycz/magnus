@@ -23,11 +23,6 @@ class Course extends Model
         return $this->hasMany(Lesson::class);
     }
 
-    public function lectors()
-    {
-        return $this->hasManyThrough(Lector::class, Classroom::class);
-    }
-
     public function getExcerptAttribute()
     {
         return str_limit(strip_tags($this->description), 240);
