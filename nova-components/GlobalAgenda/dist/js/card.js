@@ -11050,6 +11050,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -15129,6 +15130,7 @@ var render = function() {
       _c("FullCalendar", {
         ref: "fullCalendar",
         attrs: {
+          "default-view": "timeGridWeek",
           "first-day": 1,
           plugins: _vm.calendarPlugins,
           weekends: _vm.calendarWeekends,
