@@ -2,6 +2,7 @@
     <card class="flex flex-col items-center justify-center p-8" style="min-height: 300px">
         <FullCalendar
                 ref="fullCalendar"
+                :first-day="1"
                 :plugins="calendarPlugins"
                 :weekends="calendarWeekends"
                 :events="calendarEvents"
