@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\RepeatCourse;
 use App\Nova\Fields\SubscriptionFields;
 use App\Nova\Metrics\CoursesOverTime;
 use App\Nova\Metrics\NewCourses;
@@ -156,6 +157,8 @@ class Course extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new RepeatCourse())
+        ];
     }
 }

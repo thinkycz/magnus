@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    protected $fillable = ['name', 'description', 'price', 'starts_at', 'ends_at', 'color', 'internal_name', 'is_public'];
+
     protected $dates = ['starts_at', 'ends_at'];
 
     public function students()
