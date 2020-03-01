@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Metrics\NewUsers;
 use App\Nova\Metrics\UsersOverTime;
 use KABBOUCHI\NovaImpersonate\Impersonate;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasOne;
 use Illuminate\Http\Request;
@@ -77,6 +78,9 @@ class User extends Resource
             HasOne::make('Lector Profile', 'Lector', Lector::class),
 
             HasOne::make('Student Profile', 'Student', Student::class),
+
+            BelongsToMany::make('Children', 'children', Student::class)
+                ->searchable(),
 
             Impersonate::make($this)
         ];

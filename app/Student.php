@@ -35,6 +35,11 @@ class Student extends Model
         return $this->hasMany(Feedback::class);
     }
 
+    public function parents()
+    {
+        return $this->belongsToMany(User::class, 'student_user');
+    }
+
     public function getFullNameAttribute()
     {
         if ($this->nickname) {

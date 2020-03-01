@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->morphMany(Note::class, 'notable');
     }
 
+    public function children()
+    {
+        return $this->belongsToMany(Student::class, 'student_user');
+    }
+
     public function canImpersonate()
     {
         return $this->is_admin;

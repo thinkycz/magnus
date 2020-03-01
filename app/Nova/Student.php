@@ -117,7 +117,10 @@ class Student extends Resource
 
             HasMany::make('Exams'),
 
-            HasMany::make('Feedbacks')
+            HasMany::make('Feedbacks'),
+
+            BelongsToMany::make('Parents', 'parents', User::class)
+                ->searchable(),
         ];
     }
 
