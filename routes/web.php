@@ -17,6 +17,7 @@ Route::get('logout', function () {
 Route::get('not-student', [NotStudentController::class, 'index'])->name('not_student');
 
 Route::redirect('/dashboard', '/student/courses')->name('dashboard');
+Route::redirect('/parent', '/parent/children')->name('parent');
 
 Route::group(['middleware' => 'student', 'prefix' => 'student', 'as' => 'student.'], function () {
     Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
@@ -25,6 +26,10 @@ Route::group(['middleware' => 'student', 'prefix' => 'student', 'as' => 'student
     Route::get('exams', [ExamController::class, 'index'])->name('exams.index');
     Route::get('feedbacks', [FeedbackController::class, 'index'])->name('feedbacks.index');
     Route::get('homeworks', [HomeworkController::class, 'index'])->name('homeworks.index');
+});
+
+Route::group(['middleware' => 'parent', 'prefix' => 'parent', 'as' => 'parent.'], function () {
+    Route::get('children', [\App\Http\Controllers\App\Parent\ChildController::class, 'index'])->name('children.index');
 });
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
