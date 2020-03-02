@@ -57,6 +57,9 @@
                     @endif
                     @can('viewNova')
                         <li>
+                            <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900" href="{{ route('quizzes.index') }}">Quiz</a>
+                        </li>
+                        <li>
                             <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 lg:mb-0 mb-2"
                                href="{{ url(config('nova.path')) }}">Admin</a>
                         </li>

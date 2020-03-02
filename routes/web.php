@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\App\Quiz\QuizController;
 use App\Http\Controllers\App\Student\CourseController;
 use App\Http\Controllers\App\NotStudentController;
 use App\Http\Controllers\App\ProfileController;
@@ -38,3 +39,4 @@ Route::put('profile/{user}', [ProfileController::class, 'update'])->name('profil
 Route::get('security', [SecurityController::class, 'index'])->name('security.index');
 Route::put('security/{user}', [SecurityController::class, 'update'])->name('security.update');
 
+Route::get('quizzes', [QuizController::class, 'index'])->name('quizzes.index');
