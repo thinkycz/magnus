@@ -8,7 +8,7 @@
         <h1 class="my-4 font-medium mt-40 lg:mt-32 lg:mt-0 text-center w-full px-2 text-gray-800 text-2xl xl:text-4xl lg:px-0 font-black mb-8 md:w-full lg:text-left lg:-mt-4 h-auto xl:h-24 xl:leading-relaxed">Hãy học cùng chúng tôi <span id="title" class="text-orange-500"></span></h1>
         <p class="mb-4 pr-36 text-normal xl:text-lg text-center w-full px-16 text-gray-600 leading-loose xl:pr-32 md:text-center md:px-32 sm:text-center lg:text-left lg:px-0">Với Magnus bạn sẽ sở hữu chìa khóa mở ra cánh cửa hội nhập cùng Cộng hoà Séc</p>
 
-        <div class="flex justify-center items-center flex-col">
+        <div class="flex justify-center items-center flex-col w-full lg:w-auto">
             <div class="max-w-5xl">
                 @auth
                     <a href="{{ route('login') }}" class="bg-green-500 text-gray-100 hover:bg-green-600 shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full mt-4">

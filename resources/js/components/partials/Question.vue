@@ -1,31 +1,39 @@
 <template>
-    <div class="w-full px-40 py-12">
-        <h2 class="flex items-center text-gray-700 text-xs lg:text-base">Question {{ questionNumber }}</h2>
-        <h1 class="font-bold text-black text-xl lg:text-2xl mb-8">{{ question.text }} </h1>
+    <div class="w-full p-8 lg:px-40 lg:py-12">
+        <div class="flex justify-between items-center w-full">
+            <h2 class="text-gray-700 text-sm">{{ question.attributes.title }}</h2>
 
-        <div class="px-12">
+            <slot></slot>
+        </div>
 
+        <div class="font-semibold text-gray-800 text-lg mt-2 mb-8 p-4 bg-white rounded shadow">
+            <vue-markdown>{{ question.attributes.content }}</vue-markdown>
+        </div>
 
-            <button @click="submitAnswer" class="bg-green-400 px-8 py-3 mt-8 rounded-lg text-sm font-semibold text-gray-900 tracking-widest hover:bg-green-500 focus:outline-none">Answer</button>
+        <div class="px-4 lg:px-12">
+            <div :is="question.layout" :answers="question.attributes.answers" @answer="(value) => {answer = value}"></div>
+
+            <button @click="$emit('answer', answer)" class="bg-green-400 px-8 py-3 mt-8 rounded-lg text-sm font-semibold text-gray-900 tracking-widest hover:bg-green-500 focus:outline-none">Tiếp theo</button>
         </div>
     </div>
 </template>
 
 <script>
+    import Choice from "./questions/Choice"
+    import VueMarkdown from 'vue-markdown'
+
     export default {
-        props: ['question', 'questionNumber'],
+        props: ['question'],
 
         data() {
             return {
-                answer: ''
+                answer: null
             }
         },
 
-        methods: {
-            submitAnswer: function () {
-                this.$emit('answer', {answer: this.answer});
-                this.answer = null;
-            }
+        components: {
+            choice: Choice,
+            VueMarkdown
         }
     }
 </script>

@@ -17,7 +17,14 @@ Route::get('logout', function () {
 
 Route::get('not-student', [NotStudentController::class, 'index'])->name('not_student');
 
-Route::redirect('/dashboard', '/student/courses')->name('dashboard');
+Route::get('/dashboard', function () {
+    if (auth()->user()->student) {
+        return redirect()->route('student.courses.index');
+    }
+
+    return redirect()->route('elearning.quizzes.index');
+})->name('dashboard');
+
 Route::redirect('/parent', '/parent/children')->name('parent');
 
 Route::group(['middleware' => 'student', 'prefix' => 'student', 'as' => 'student.'], function () {

@@ -3,11 +3,9 @@
         <Intro v-if="stage === 'intro'" :quiz="quiz" @start="stage = 'question'"></Intro>
 
         <div v-if="stage === 'question'">
-            <question
-                :question="questions[currentQuestion]"
-                v-on:answer="handleAnswer"
-                :question-number="currentQuestion+1"
-            ></question>
+            <Question :question="currentQuestion" :key="currentQuestion.key" @answer="answer">
+                <span class="text-gray-700 text-lg font-semibold">{{ current + 1  }} / {{ quiz.questions.length }}</span>
+            </Question>
         </div>
 
         <Results v-if="stage === 'results'"></Results>
@@ -16,6 +14,7 @@
 
 <script>
     import Intro from "./partials/Intro"
+    import Question from "./partials/Question"
     import Results from "./partials/Results"
 
     export default {
@@ -24,34 +23,32 @@
         data() {
             return {
                 stage: 'intro',
-
-                currentQuestion: 0,
+                current: 0,
                 answers: [],
             }
         },
 
+        computed: {
+            currentQuestion() {
+                return this.quiz.questions[this.current]
+            }
+        },
+
         methods: {
-            handleAnswer(e) {
-                this.answers[this.currentQuestion] = e.answer;
-                if ((this.currentQuestion + 1) === this.questions.length) {
-                    this.handleResults();
-                    this.questionStage = false;
-                    this.resultsStage = true;
+            answer(value) {
+                this.answers[this.current] = value;
+
+                if(this.current < this.quiz.questions.length - 1) {
+                    this.current += 1
                 } else {
-                    this.currentQuestion++;
+                    this.stage = 'results'
                 }
             },
-            handleResults() {
-                this.questions.forEach((a, index) => {
-                    if (this.answers[index] === a.answer) this.correct++;
-                });
-                this.perc = ((this.correct / this.questions.length) * 100).toFixed(2);
-                console.log(this.correct + ' ' + this.perc);
-            }
         },
 
         components: {
             Intro,
+            Question,
             Results
         }
     }
