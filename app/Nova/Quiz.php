@@ -44,31 +44,39 @@ class Quiz extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Title'),
+            Text::make('Title')
+                ->rules('required'),
 
-            Froala::make('Description'),
+            Froala::make('Description')
+                ->rules('required'),
 
-            Number::make('Difficulty')
-                ->min('0')
-                ->max('3'),
+            Select::make('Difficulty')
+                ->options([
+                    0 => 'Beginner',
+                    1 => 'Pre-Intermediate',
+                    2 => 'Intermediate',
+                    3 => 'Advanced'
+                ])
+                ->displayUsingLabels(),
 
             Flexible::make('Questions')
                 ->button('Add Question')
                 ->addLayout('Yes or No', 'boolean', [
-                    Text::make('Title'),
-                    Markdown::make('Content'),
+                    Text::make('Title')->rules('required'),
+                    Markdown::make('Content')->rules('required'),
                     Boolean::make('Correct'),
                     Textarea::make('Explanation'),
                 ])
                 ->addLayout('Multiple Choice', 'choice', [
-                    Text::make('Title'),
-                    Markdown::make('Content'),
+                    Text::make('Title')->rules('required'),
+                    Markdown::make('Content')->rules('required'),
                     Flexible::make('Answers')
                         ->button('Add Answer')
                         ->addLayout('Answer', 'answer', [
                             Text::make('Title'),
                             Boolean::make('Correct'),
-                        ]),
+                        ])
+                        ->rules('required'),
                     Textarea::make('Explanation'),
                 ])
         ];
