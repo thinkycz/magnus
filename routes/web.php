@@ -31,6 +31,7 @@ Route::group(['middleware' => 'student', 'prefix' => 'student', 'as' => 'student
 
 Route::group(['middleware' => 'parent', 'prefix' => 'parent', 'as' => 'parent.'], function () {
     Route::get('children', [\App\Http\Controllers\App\Parent\ChildController::class, 'index'])->name('children.index');
+    Route::get('children/{child}', [\App\Http\Controllers\App\Parent\ChildController::class, 'show'])->name('children.show');
 });
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
