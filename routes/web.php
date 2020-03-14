@@ -34,10 +34,14 @@ Route::group(['middleware' => 'parent', 'prefix' => 'parent', 'as' => 'parent.']
     Route::get('children/{child}', [\App\Http\Controllers\App\Parent\ChildController::class, 'show'])->name('children.show');
 });
 
+Route::group(['prefix' => 'elearning', 'as' => 'elearning.'], function () {
+    Route::get('quizzes', [QuizController::class, 'index'])->name('quizzes.index');
+    Route::get('quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
+});
+
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::put('profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
 
 Route::get('security', [SecurityController::class, 'index'])->name('security.index');
 Route::put('security/{user}', [SecurityController::class, 'update'])->name('security.update');
 
-Route::get('quizzes', [QuizController::class, 'index'])->name('quizzes.index');

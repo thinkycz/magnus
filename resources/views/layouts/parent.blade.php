@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
-    <div class="pt-4">
+    <div class="p-4">
         <nav id="nav" class="w-64 relative">
             <ul class="relative">
                 <li>
@@ -20,5 +20,7 @@
         </nav>
     </div>
 
-    @yield('side')
+    <div class="px-4 w-full">
+        @yield('side')
+    </div>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mx-auto pt-8">
-        <div class="flex">
+        <div class="lg:flex">
             @yield('main')
         </div>
     </div>
