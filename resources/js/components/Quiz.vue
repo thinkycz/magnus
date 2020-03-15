@@ -5,7 +5,7 @@
         <div v-if="stage === 'question'">
             <Question :question="currentQuestion" :key="currentQuestion.key" @answer="answer">
                 <span
-                    class="text-gray-700 text-lg font-semibold">{{ current + 1  }} / {{ quiz.questions.length }}</span>
+                    class="text-gray-700 text-lg font-semibold flex-shrink-0">{{ current + 1  }} / {{ quiz.questions.length }}</span>
             </Question>
         </div>
 

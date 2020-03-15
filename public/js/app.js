@@ -42907,7 +42907,10 @@ var render = function() {
                 [
                   _c(
                     "span",
-                    { staticClass: "text-gray-700 text-lg font-semibold" },
+                    {
+                      staticClass:
+                        "text-gray-700 text-lg font-semibold flex-shrink-0"
+                    },
                     [
                       _vm._v(
                         _vm._s(_vm.current + 1) +

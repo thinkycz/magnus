@@ -4,8 +4,8 @@
     <div class="w-full">
         @forelse($quizzes as $quiz)
             <div class="w-full bg-white rounded-lg shadow-lg mx-auto my-8">
-                <div class="px-4 py-5 flex items-center justify-between">
-                    <div>
+                <div class="px-4 py-5 md:flex items-center justify-between">
+                    <div class="mb-4 md:mb-0">
                         <h3 class="text-xl font-semibold text-gray-900">{{ $quiz->title }}</h3>
                         <p class="text-sm font-semibold text-gray-700">Trình độ:
                             @if($quiz->difficulty === 3)
