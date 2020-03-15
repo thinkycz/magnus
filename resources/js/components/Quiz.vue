@@ -4,7 +4,8 @@
 
         <div v-if="stage === 'question'">
             <Question :question="currentQuestion" :key="currentQuestion.key" @answer="answer">
-                <span class="text-gray-700 text-lg font-semibold">{{ current + 1  }} / {{ quiz.questions.length }}</span>
+                <span
+                    class="text-gray-700 text-lg font-semibold">{{ current + 1  }} / {{ quiz.questions.length }}</span>
             </Question>
         </div>
 
@@ -38,12 +39,23 @@
             answer(value) {
                 this.answers[this.current] = value;
 
-                if(this.current < this.quiz.questions.length - 1) {
+                if (this.current < this.quiz.questions.length - 1) {
                     this.current += 1
                 } else {
-                    this.stage = 'results'
+                    this.process();
                 }
             },
+
+            process() {
+                this.stage = 'results';
+
+                axios.post(`/elearning/quizzes/${this.quiz.id}/process`, {answers: this.answers})
+                    .then(({data}) => {
+                        setTimeout(() => {
+                            window.location = data.redirect;
+                        }, 2000)
+                    })
+            }
         },
 
         components: {

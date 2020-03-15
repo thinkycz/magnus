@@ -20,6 +20,7 @@
 
 <script>
     import Choice from "./questions/Choice"
+    import Boolean from "./questions/Boolean"
     import VueMarkdown from 'vue-markdown'
 
     export default {
@@ -33,6 +34,7 @@
 
         components: {
             choice: Choice,
+            boolean: Boolean,
             VueMarkdown
         }
     }

@@ -15,7 +15,7 @@
 
         <p class="text-xs text-gray-600 font-semibold mt-2">Trình độ - {{ quiz.difficulty > 2 ? 'Khó' : ( quiz.difficulty > 1 ? 'Trung bình' : 'Dễ')}}</p>
 
-        <div class="p-8 rounded bg-white shadow-lg my-8" v-html="quiz.description"></div>
+        <div class="p-8 rounded bg-white shadow-lg my-8 editor" v-html="quiz.description"></div>
 
         <button @click="$emit('start')"
                 class="bg-gray-400 px-24 py-4 mt-4 rounded-lg text-sm font-semibold text-gray-800 tracking-widest uppercase hover:bg-gray-500 focus:outline-none">

@@ -44,6 +44,7 @@ Route::group(['middleware' => 'parent', 'prefix' => 'parent', 'as' => 'parent.']
 Route::group(['prefix' => 'elearning', 'as' => 'elearning.'], function () {
     Route::get('quizzes', [QuizController::class, 'index'])->name('quizzes.index');
     Route::get('quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
+    Route::post('quizzes/{quiz}/process', [QuizController::class, 'process'])->name('quizzes.process');
 });
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
