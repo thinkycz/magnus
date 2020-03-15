@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\App\Quiz;
+namespace App\Http\Controllers\App\Elearning;
 
 use App\Quiz;
 use App\Result;
@@ -10,7 +10,7 @@ class QuizController
 {
     public function index()
     {
-        $quizzes = Quiz::paginate();
+        $quizzes = Quiz::latest()->paginate();
 
         return view('app.elearning.quizzes.index', compact('quizzes'));
     }
@@ -34,7 +34,7 @@ class QuizController
         ]);
 
         return response([
-            'redirect' => route('elearning.quizzes.index')
+            'redirect' => route('elearning.results.show', $result)
         ]);
     }
 }

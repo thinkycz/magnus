@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\App\Quiz\QuizController;
+use App\Http\Controllers\App\Elearning\QuizController;
+use App\Http\Controllers\App\Elearning\ResultController;
 use App\Http\Controllers\App\Student\CourseController;
 use App\Http\Controllers\App\NotStudentController;
 use App\Http\Controllers\App\ProfileController;
@@ -45,6 +46,9 @@ Route::group(['prefix' => 'elearning', 'as' => 'elearning.'], function () {
     Route::get('quizzes', [QuizController::class, 'index'])->name('quizzes.index');
     Route::get('quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
     Route::post('quizzes/{quiz}/process', [QuizController::class, 'process'])->name('quizzes.process');
+
+    Route::get('results', [ResultController::class, 'index'])->name('results.index');
+    Route::get('results/{result}', [ResultController::class, 'show'])->name('results.show');
 });
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');

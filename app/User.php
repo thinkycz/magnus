@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->morphMany(Note::class, 'notable');
     }
 
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
+
     public function children()
     {
         return $this->belongsToMany(Student::class, 'student_user');
