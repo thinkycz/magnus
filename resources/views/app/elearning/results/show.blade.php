@@ -3,14 +3,14 @@
 @section('side')
     <div class="w-full">
         <div class="w-full bg-white rounded-lg shadow-lg mx-auto my-8">
-            <div class="px-4 py-5 flex items-center justify-between">
-                <div>
+            <div class="px-4 py-5 md:flex items-center justify-between">
+                <div class="mb-4 md:mb-0">
                     <h3 class="text-xl font-semibold text-gray-900">{{ $result->quiz->title }}</h3>
                     <p class="text-sm font-semibold text-gray-700">{{ $result->created_at->format('j.n.Y') }}</p>
                 </div>
 
                 <span
-                    class="text-sm text-white px-4 py-2 rounded font-bold {{ $result->score > 70 ? 'bg-green-500' : ($result->score > 30 ? 'bg-orange-500' : 'bg-red-500') }}">
+                    class="text-sm text-white px-4 py-2 rounded font-bold flex-shrink-0 {{ $result->score > 70 ? 'bg-green-500' : ($result->score > 30 ? 'bg-orange-500' : 'bg-red-500') }}">
                         Kết quả: {{ $result->score . ' %' }}
                     </span>
             </div>
@@ -50,59 +50,22 @@
             </div>
         </div>
 
-        @foreach($result->questions as $key => $question)
+        @foreach($result->types as $question)
             <div class="w-full bg-white rounded-lg shadow-lg mx-auto my-4">
                 <div class="p-4">
-                    <p class="text-sm font-semibold text-gray-700">{{ '#' . $loop->iteration }}
-                        - {{ array_get($question, 'attributes.title') }}</p>
-                    <div class="text-md text-gray-900 mt-1">{!! array_get($question, 'attributes.content') !!}</div>
+                    <p class="text-sm font-semibold text-gray-700">{{ '#' . $loop->iteration }} - {{ $question->title }}</p>
+                    <div class="text-md text-gray-900 mt-1">{!! $question->content !!}</div>
                 </div>
 
                 <div class="p-4 border-t lg:flex">
-                    @if(array_get($question, 'layout') === 'choice')
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-gray-800">Đáp án</h4>
-                            <ul class="pl-8 text-sm text-gray-700 font-semibold">
-                                @foreach(array_get($question, 'attributes.answers') as $answer)
-                                    <li class="list-disc {{ array_get($answer, 'attributes.correct') ? 'text-green-700' : 'text-red-700' }}">{{ array_get($answer, 'attributes.title') }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-gray-800">Bạn đã chọn</h4>
-                            <ul class="pl-8 text-sm text-gray-700 font-semibold">
-                                @foreach(array_get($result->answers, $key, []) as $answer)
-                                    <li class="list-disc {{ array_get($answer, 'attributes.correct') ? 'text-green-700' : 'text-red-700' }}">{{ array_get($answer, 'attributes.title') }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @elseif(array_get($question, 'layout') === 'boolean')
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-gray-800">Đáp án</h4>
-                            @if(array_get($question, 'attributes.correct'))
-                                <p class="pl-8 text-sm text-green-700 font-semibold">Đồng ý</p>
-                            @else
-                                <p class="pl-8 text-sm text-red-700 font-semibold">Không đồng ý</p>
-                            @endif
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-semibold text-gray-800">Bạn đã chọn</h4>
-                            <ul class="pl-8 text-sm text-gray-700">
-                                @if(array_get($result->answers, $key, false))
-                                    <p class="pl-8 text-sm text-green-700 font-semibold">Đồng ý</p>
-                                @else
-                                    <p class="pl-8 text-sm text-red-700 font-semibold">Không đồng ý</p>
-                                @endif
-                            </ul>
-                        </div>
-                    @endif
+                    {!! $question->render() !!}
                 </div>
 
-                @if(array_get($question, 'attributes.explanation', false))
+                @if($question->explanation)
                     <div class="p-4 border-t">
                         <p class="text-sm font-semibold text-gray-700">Giải thích</p>
                         <div
-                            class="text-sm text-gray-900 mt-1">{{ array_get($question, 'attributes.explanation') }}</div>
+                            class="text-sm text-gray-900 mt-1">{{ $question->explanation }}</div>
                     </div>
                 @endif
             </div>
