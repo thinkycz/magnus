@@ -48,15 +48,18 @@
             <nav>
                 <ul class="lg:flex items-center justify-between text-sm font-medium text-gray-700 pt-4 lg:pt-0">
                     <li>
-                        <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('student.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}" href="{{ route('dashboard') }}">Sinh viên</a>
+                        <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('student.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}"
+                           href="{{ route('dashboard') }}">Sinh viên</a>
                     </li>
                     @if(auth()->user()->children()->exists())
                         <li>
-                            <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('parent.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}" href="{{ route('parent') }}">Phụ huynh</a>
+                            <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('parent.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}"
+                               href="{{ route('parent') }}">Phụ huynh</a>
                         </li>
                     @endif
                     <li>
-                        <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('elearning.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}" href="{{ route('elearning.quizzes.index') }}">Học Online</a>
+                        <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('elearning.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}"
+                           href="{{ route('elearning.quizzes.index') }}">Học Online</a>
                     </li>
                     @can('viewNova')
                         <li>
@@ -66,22 +69,27 @@
                     @endcan
                 </ul>
             </nav>
-            <a href="#"
-               class="group lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor border-l border-gray-300 pl-6"
-               id="userdropdown">
-                <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">{{ auth()->user()->name }}</p>
-                <img
-                    class="rounded-full w-10 h-10 border-2 border-transparent group-hover:border-orange-400 ignore-body-click"
-                    src="https://www.gravatar.com/avatar/{{ md5(strtolower(trim(auth()->user()->email))) }}?s=80&d=mp"
-                    alt="avatar">
-            </a>
-            <div id="usermenu"
-                 class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 invisible lg:w-auto w-full">
-                <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded rounded-t-none">
-                    <a href="{{ route('profile.index') }}"
-                       class="py-2 block text-gray-600 hover:text-gray-900 font-medium ignore-body-click">Cá nhân</a>
-                    <a href="{{ route('logout') }}"
-                       class="py-2 block text-gray-600 hover:text-gray-900 font-medium ignore-body-click">Đăng xuất</a>
+
+            <div>
+                <a @click.prevent="userMenuOpen = !userMenuOpen"
+                   class="group lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor border-l border-gray-300 pl-6">
+                    <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">{{ auth()->user()->name }}</p>
+                    <img
+                        class="rounded-full w-10 h-10 border-2 border-transparent ignore-body-click"
+                        :class="{'border-orange-400': userMenuOpen}"
+                        src="https://www.gravatar.com/avatar/{{ md5(strtolower(trim(auth()->user()->email))) }}?s=80&d=mp"
+                        alt="avatar">
+                </a>
+
+                <div v-show="userMenuOpen" class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 lg:w-auto w-full">
+                    <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded rounded-t-none">
+                        <a href="{{ route('profile.index') }}"
+                           class="py-2 block text-gray-600 hover:text-gray-900 font-medium ignore-body-click">Cá
+                            nhân</a>
+                        <a href="{{ route('logout') }}"
+                           class="py-2 block text-gray-600 hover:text-gray-900 font-medium ignore-body-click">Đăng
+                            xuất</a>
+                    </div>
                 </div>
             </div>
 
@@ -101,25 +109,3 @@
         </div>
     </div>
 @endif
-
-{{--<script>--}}
-{{--    var userDropDownVisible = false;--}}
-
-{{--    document.body.addEventListener("click", function (e) {--}}
-{{--        if (e.target.id != "usermenu" && !e.target.classList.contains('ignore-body-click') && userDropDownVisible) {--}}
-{{--            document.getElementById('usermenu').classList.add('invisible');--}}
-{{--            userDropDownVisible = false;--}}
-{{--        }--}}
-{{--    });--}}
-
-
-{{--    document.getElementById('userdropdown').addEventListener('click', function () {--}}
-{{--        if (document.getElementById('usermenu').classList.contains('invisible')) {--}}
-{{--            document.getElementById('usermenu').classList.remove('invisible');--}}
-{{--            userDropDownVisible = true;--}}
-{{--        } else {--}}
-{{--            document.getElementById('usermenu').classList.add('invisible');--}}
-{{--            userDropDownVisible = false;--}}
-{{--        }--}}
-{{--    });--}}
-{{--</script>--}}

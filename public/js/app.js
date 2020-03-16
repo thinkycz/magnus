@@ -55973,7 +55973,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('Quiz', __webpack_require__(/*! ./components/Quiz */ "./resources/js/components/Quiz.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('question', __webpack_require__(/*! ./components/partials/Question */ "./resources/js/components/partials/Question.vue")["default"]);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app'
+  el: '#app',
+  data: function data() {
+    return {
+      userMenuOpen: false
+    };
+  }
 });
 
 /***/ }),
