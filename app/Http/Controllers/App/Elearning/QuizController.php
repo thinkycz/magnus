@@ -8,13 +8,6 @@ use Illuminate\Http\Request;
 
 class QuizController
 {
-    public function index()
-    {
-        $quizzes = Quiz::latest()->paginate();
-
-        return view('app.elearning.quizzes.index', compact('quizzes'));
-    }
-
     public function show(Quiz $quiz)
     {
         return view('app.elearning.quizzes.show', compact('quiz'));

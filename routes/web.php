@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\App\Elearning\QuizController;
 use App\Http\Controllers\App\Elearning\ResultController;
+use App\Http\Controllers\App\Elearning\SectionController;
 use App\Http\Controllers\App\Student\CourseController;
 use App\Http\Controllers\App\NotStudentController;
 use App\Http\Controllers\App\ProfileController;
@@ -23,7 +24,7 @@ Route::get('/dashboard', function () {
         return redirect()->route('student.courses.index');
     }
 
-    return redirect()->route('elearning.quizzes.index');
+    return redirect()->route('elearning.sections.index');
 })->name('dashboard');
 
 Route::redirect('/parent', '/parent/children')->name('parent');
@@ -43,7 +44,9 @@ Route::group(['middleware' => 'parent', 'prefix' => 'parent', 'as' => 'parent.']
 });
 
 Route::group(['prefix' => 'elearning', 'as' => 'elearning.'], function () {
-    Route::get('quizzes', [QuizController::class, 'index'])->name('quizzes.index');
+    Route::get('sections', [SectionController::class, 'index'])->name('sections.index');
+    Route::get('sections/{section}', [SectionController::class, 'show'])->name('sections.show');
+
     Route::get('quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
     Route::post('quizzes/{quiz}/process', [QuizController::class, 'process'])->name('quizzes.process');
 

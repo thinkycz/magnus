@@ -29,5 +29,7 @@
                 </div>
             </div>
         @endforelse
+
+        {{ $results->links() }}
     </div>
 @endsection

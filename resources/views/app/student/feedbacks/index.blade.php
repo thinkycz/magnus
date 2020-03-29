@@ -34,6 +34,8 @@
                 </div>
             </div>
         @endforelse
+
+        {{ $feedbacks->links() }}
     </div>
 
 @endsection

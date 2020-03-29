@@ -7,7 +7,8 @@
                 <div class="px-4 py-5 border-b-2 flex items-center justify-between">
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900">{{ $homework->title }}</h3>
-                        <p class="text-sm font-semibold text-gray-700">{{ $homework->lesson->course->name }} - {{ $homework->lesson->title }}</p>
+                        <p class="text-sm font-semibold text-gray-700">{{ $homework->lesson->course->name }}
+                            - {{ $homework->lesson->title }}</p>
                     </div>
                 </div>
 
@@ -28,6 +29,8 @@
                 </div>
             </div>
         @endforelse
+
+        {{ $homeworks->links() }}
     </div>
 
 @endsection

@@ -3,28 +3,26 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Panel;
 
-class Result extends Resource
+class Section extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Result::class;
+    public static $model = \App\Section::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     public static $group = 'E-Learning';
 
@@ -37,23 +35,13 @@ class Result extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            Text::make('Name')->sortable(),
 
-            BelongsTo::make('Quiz'),
-
-            BelongsTo::make('User'),
-
-            Number::make('Score', function () {
-                return $this->score . '%';
+            Text::make('Number of Quizzes', function () {
+                return $this->quizzes->count();
             }),
 
-            new Panel('Data', function () {
-                return [
-                    Code::make('Questions')->json(),
-
-                    Code::make('Answers')->json(),
-                ];
-            })
+            HasMany::make('Quizzes')
         ];
     }
 

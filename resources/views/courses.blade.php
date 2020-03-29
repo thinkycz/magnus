@@ -19,6 +19,8 @@
                     <div class="absolute bottom-0 right-0 bg-green-500 text-white px-4 py-2 rounded-br rounded-tl-lg font-semibold text-sm">{{ number_format($course->price, 2) . ' Kč' }}</div>
                 </div>
             @endforeach
+
+            {{ $courses->links() }}
         </div>
     </section>
 @endsection
