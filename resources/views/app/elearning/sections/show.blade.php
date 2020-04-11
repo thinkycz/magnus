@@ -8,7 +8,14 @@
             <div class="w-full bg-white rounded-lg shadow-lg mx-auto my-8">
                 <div class="px-4 py-5 md:flex items-center justify-between">
                     <div class="mb-4 md:mb-0">
-                        <h3 class="text-xl font-semibold text-gray-900">{{ $quiz->title }}</h3>
+                        <div class="flex">
+                            <h3 class="text-xl font-semibold text-gray-900">{{ $quiz->title }}</h3>
+                            @if($quiz->is_premium)
+                                <div class="flex items-center">
+                                    <p class="font-semibold text-xs text-white bg-green-600 px-2 py-1 rounded leading-none ml-2">PREMIUM</p>
+                                </div>
+                            @endif
+                        </div>
                         <p class="text-sm font-semibold text-gray-700">Trình độ:
                             @if($quiz->difficulty === 3)
                                 <span>Khó</span>

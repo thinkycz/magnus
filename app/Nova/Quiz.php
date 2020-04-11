@@ -60,6 +60,8 @@ class Quiz extends Resource
             BelongsTo::make('Section')
                 ->nullable(),
 
+            Boolean::make('Is Premium'),
+
             Flexible::make('Questions')
                 ->button('Add Question')
                 ->addLayout('Yes or No', 'boolean', [

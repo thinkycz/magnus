@@ -35,6 +35,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'premium_until'     => 'date'
     ];
 
     public function lector()
@@ -70,5 +71,10 @@ class User extends Authenticatable
     public function canBeImpersonated()
     {
         return !$this->canImpersonate();
+    }
+
+    public function getHasPremiumAttribute()
+    {
+        return now()->lt($this->premium_until);
     }
 }

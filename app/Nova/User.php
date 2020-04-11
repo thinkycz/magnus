@@ -7,6 +7,7 @@ use App\Nova\Metrics\UsersOverTime;
 use KABBOUCHI\NovaImpersonate\Impersonate;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasOne;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphMany;
@@ -71,7 +72,13 @@ class User extends Resource
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
 
-            Boolean::make('Is Admin'),
+            Date::make('Premium Until')->hideFromIndex(),
+
+            Boolean::make('Premium', function () {
+                return $this->has_premium;
+            }),
+
+            Boolean::make('Is Admin')->hideFromIndex(),
 
             MorphMany::make('Notes'),
 

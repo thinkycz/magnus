@@ -59,7 +59,7 @@
                     @endif
                     <li>
                         <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('elearning.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}"
-                           href="{{ route('elearning.sections.index') }}">M.Online</a>
+                           href="{{ route('elearning.sections.index') }}">M.ONLINE</a>
                     </li>
                     @can('viewNova')
                         <li>
@@ -72,8 +72,14 @@
 
             <div>
                 <a @click.prevent="userMenuOpen = !userMenuOpen"
-                   class="group lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor border-l border-gray-300 pl-6">
-                    <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">{{ auth()->user()->name }}</p>
+                   class="group lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer border-l border-gray-300 pl-6">
+                    <div>
+                        <p class="font-bold text-xs pr-2 text-gray-700 text-right ignore-body-click">{{ auth()->user()->name }}</p>
+                        @if(auth()->user()->has_premium)
+                            <p class="font-semibold text-xs text-green-600">PREMIUM</p>
+                        @endif
+                    </div>
+
                     <img
                         class="rounded-full w-10 h-10 border-2 border-transparent ignore-body-click"
                         :class="{'border-orange-400': userMenuOpen}"
@@ -81,7 +87,8 @@
                         alt="avatar">
                 </a>
 
-                <div v-show="userMenuOpen" class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 lg:w-auto w-full">
+                <div v-show="userMenuOpen"
+                     class="absolute lg:mt-12 pt-1 z-40 left-0 lg:left-auto lg:right-0 lg:top-0 lg:w-auto w-full">
                     <div class="bg-white shadow-xl lg:px-8 px-6 lg:py-4 pb-4 pt-0 rounded rounded-t-none">
                         <a href="{{ route('profile.index') }}"
                            class="py-2 block text-gray-600 hover:text-gray-900 font-medium ignore-body-click">Cá

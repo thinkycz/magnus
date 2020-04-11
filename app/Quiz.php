@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     protected $casts = [
-        'questions' => 'json'
+        'questions'  => 'json',
+        'is_premium' => 'boolean'
     ];
 
     public function section()

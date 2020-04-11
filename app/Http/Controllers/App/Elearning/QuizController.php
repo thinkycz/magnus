@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers\App\Elearning;
 
+use App\Http\Controllers\Controller;
 use App\Quiz;
 use App\Result;
 use Illuminate\Http\Request;
 
-class QuizController
+class QuizController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function (Request $request, $next) {
+            if (!($request->route('quiz')->is_premium && auth()->user()->has_premium)) {
+                return redirect()->route('elearning.premium-required');
+            }
+
+            return $next($request);
+        });
+    }
+
     public function show(Quiz $quiz)
     {
         return view('app.elearning.quizzes.show', compact('quiz'));

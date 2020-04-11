@@ -52,6 +52,8 @@ Route::group(['prefix' => 'elearning', 'as' => 'elearning.'], function () {
 
     Route::get('results', [ResultController::class, 'index'])->name('results.index');
     Route::get('results/{result}', [ResultController::class, 'show'])->name('results.show');
+
+    Route::get('premium-required', \App\Http\Controllers\App\Elearning\PremiumRequiredController::class)->name('premium-required');
 });
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
