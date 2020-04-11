@@ -59,7 +59,7 @@
                     @endif
                     <li>
                         <a class="lg:p-4 py-3 px-0 block text-gray-600 hover:text-gray-900 {{ Request::routeIs('elearning.*') ? 'text-orange-500 hover:text-orange-500 font-bold' : '' }}"
-                           href="{{ route('elearning.sections.index') }}">Học Online</a>
+                           href="{{ route('elearning.sections.index') }}">M.Online</a>
                     </li>
                     @can('viewNova')
                         <li>

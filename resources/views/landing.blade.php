@@ -573,7 +573,7 @@
                     Giáo viên của Magnus
                 </h2>
                 <p class="text-center mt-4 text-gray-600">
-
+                    Učte se smradi
                 </p>
             </div>
 
@@ -581,7 +581,7 @@
                 <div class="flex flex-col">
                     <img src="{{ asset('img/anne.jpg') }}" alt="Anne Truong"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
-                    <h4 class="text-lg font-semibold text-gray-800 text-center">Anne Truong</h4>
+                    <h4 class="text-lg font-semibold text-gray-800 text-center">Anna Truongová</h4>
                     <p class="text-sm text-gray-700 text-center">Người sáng lập</p>
                 </div>
 
@@ -593,10 +593,17 @@
                 </div>
 
                 <div class="flex flex-col">
+                    <img src="{{ asset('img/julca.jpg') }}" alt="Long Do"
+                         class="w-48 h-48 object-cover rounded shadow-lg mb-2">
+                    <h4 class="text-lg font-semibold text-gray-800 text-center">Julie Tran</h4>
+                    <p class="text-sm text-gray-700 text-center">Giáo viên chuyên dạy toán</p>
+                </div>
+
+                <div class="flex flex-col">
                     <img src="{{ asset('img/katka.jpg') }}" alt="Kateřina Brejchová"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Kateřina Brejchová</h4>
-                    <p class="text-sm text-gray-700 text-center">Giáo viên</p>
+                    <p class="text-sm text-gray-700 text-center">Giáo viên chuyên dạy tiếng Séc</p>
                 </div>
             </div>
         </div>

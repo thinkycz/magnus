@@ -7,11 +7,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Whitecube\NovaFlexibleContent\Flexible;
 
 class Quiz extends Resource
@@ -66,13 +64,13 @@ class Quiz extends Resource
                 ->button('Add Question')
                 ->addLayout('Yes or No', 'boolean', [
                     Text::make('Title')->rules('required'),
-                    Markdown::make('Content')->rules('required'),
+                    Froala::make('Content')->rules('required'),
                     Boolean::make('Correct'),
                     Textarea::make('Explanation'),
                 ])
                 ->addLayout('Multiple Choice', 'choice', [
                     Text::make('Title')->rules('required'),
-                    Markdown::make('Content')->rules('required'),
+                    Froala::make('Content')->rules('required'),
                     Flexible::make('Answers')
                         ->button('Add Answer')
                         ->addLayout('Answer', 'answer', [
@@ -80,6 +78,12 @@ class Quiz extends Resource
                             Boolean::make('Correct'),
                         ])
                         ->rules('required'),
+                    Textarea::make('Explanation'),
+                ])
+                ->addLayout('Exact Answer', 'exact', [
+                    Text::make('Title')->rules('required'),
+                    Froala::make('Content')->rules('required'),
+                    Text::make('Correct')->rules('required'),
                     Textarea::make('Explanation'),
                 ])
         ];

@@ -4,6 +4,7 @@ namespace App;
 
 use App\Types\BooleanQuestionType;
 use App\Types\ChoiceQuestionType;
+use App\Types\ExactQuestionType;
 use Illuminate\Database\Eloquent\Model;
 
 class Result extends Model
@@ -35,6 +36,8 @@ class Result extends Model
                     return new ChoiceQuestionType($question->attributes, $answer);
                 case 'boolean':
                     return new BooleanQuestionType($question->attributes, $answer);
+                case 'exact':
+                    return new ExactQuestionType($question->attributes, $answer);
                 default:
                     return null;
             }

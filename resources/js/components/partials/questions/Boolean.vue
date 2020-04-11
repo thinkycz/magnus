@@ -9,8 +9,6 @@
     import Checkbox from "./Checkbox";
 
     export default {
-        props: ['answers'],
-
         data() {
             return {
                 value: null
