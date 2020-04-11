@@ -67,13 +67,13 @@ class Quiz extends Resource
                 ->button('Add Question')
                 ->addLayout('Yes or No', 'boolean', [
                     Text::make('Title')->rules('required'),
-                    Froala::make('Content')->withFiles('public')->rules('required'),
+                    Froala::make('Content')->rules('required'),
                     Boolean::make('Correct'),
                     Textarea::make('Explanation'),
                 ])
                 ->addLayout('Multiple Choice', 'choice', [
                     Text::make('Title')->rules('required'),
-                    Froala::make('Content')->withFiles('public')->rules('required'),
+                    Froala::make('Content')->rules('required'),
                     Flexible::make('Answers')
                         ->button('Add Answer')
                         ->addLayout('Answer', 'answer', [
@@ -85,7 +85,7 @@ class Quiz extends Resource
                 ])
                 ->addLayout('Exact Answer', 'exact', [
                     Text::make('Title')->rules('required'),
-                    Froala::make('Content')->withFiles('public')->rules('required'),
+                    Froala::make('Content')->rules('required'),
                     Text::make('Correct')->rules('required'),
                     Textarea::make('Explanation'),
                 ])
