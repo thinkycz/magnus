@@ -12,7 +12,7 @@ class QuizController extends Controller
     public function __construct()
     {
         $this->middleware(function (Request $request, $next) {
-            if (!($request->route('quiz')->is_premium && auth()->user()->has_premium)) {
+            if ($request->route('quiz')->is_premium && !auth()->user()->has_premium) {
                 return redirect()->route('elearning.premium-required');
             }
 
