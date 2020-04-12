@@ -2001,6 +2001,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -43107,6 +43111,18 @@ var render = function() {
       [_c("vue-markdown", [_vm._v(_vm._s(_vm.question.attributes.content))])],
       1
     ),
+    _vm._v(" "),
+    _vm.question.attributes.image
+      ? _c("div", { staticClass: "py-2 mb-8" }, [
+          _c("img", {
+            staticClass: "rounded",
+            attrs: {
+              src: "/storage/" + _vm.question.attributes.image,
+              alt: "Image"
+            }
+          })
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",

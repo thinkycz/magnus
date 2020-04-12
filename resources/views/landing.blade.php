@@ -575,7 +575,7 @@
             </div>
 
             <div class="flex justify-around flex-wrap">
-                <div class="flex flex-col items-center w-1/3 mb-8">
+                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/anne.jpg') }}" alt="Bc. Anna Truongová"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Bc. Anna Truongová</h4>
@@ -583,7 +583,7 @@
                     <p class="text-sm text-gray-700 text-center italic">“Những thầy cô giỏi nhất dạy bằng cả trái tim!”</p>
                 </div>
 
-                <div class="flex flex-col items-center w-1/3 mb-8">
+                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/leo.png') }}" alt="Long Do"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Long Do</h4>
@@ -591,7 +591,7 @@
                     <p class="text-sm text-gray-700 text-center italic">“Hãy ngước nhìn lên cao để thấy mình còn thấp. Hãy nhìn xuống thấp để biết mình chưa cao.”</p>
                 </div>
 
-                <div class="flex flex-col items-center w-1/3 mb-8">
+                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/julca.jpg') }}" alt="Bc. Julie Tran"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Bc. Julie Tran</h4>
@@ -599,7 +599,7 @@
                     <p class="text-sm text-gray-700 text-center italic">“Toán học là cánh cửa và là chìa khoá để đi vào các ngành khoa học khác”.</p>
                 </div>
 
-                <div class="flex flex-col items-center w-1/3 mb-8">
+                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/katka.jpg') }}" alt="Kateřina Brejchová"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Kateřina Brejchová</h4>
@@ -607,7 +607,7 @@
                     <p class="text-sm text-gray-700 text-center italic">“Một cô giáo tốt như một ngọn nến - ngọn nến cháy để soi đường cho những người khác.”</p>
                 </div>
 
-                <div class="flex flex-col items-center w-1/3 mb-8">
+                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/linda.jpg') }}" alt="Linda Tranová"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Linda Tranová</h4>
@@ -615,7 +615,7 @@
                     <p class="text-sm text-gray-700 text-center italic">“Đầu tư vào tri thức đem lại lợi nhuận cao nhất.”</p>
                 </div>
 
-                <div class="flex flex-col items-center w-1/3 mb-8">
+                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/majka.jpg') }}" alt="Bc. Xuan Mo Hoang"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Bc. Xuan Mo Hoang</h4>

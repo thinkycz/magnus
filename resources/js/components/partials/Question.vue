@@ -10,6 +10,10 @@
             <vue-markdown>{{ question.attributes.content }}</vue-markdown>
         </div>
 
+        <div v-if="question.attributes.image" class="py-2 mb-8">
+            <img :src="'/storage/' + question.attributes.image" alt="Image" class="rounded">
+        </div>
+
         <div class="px-4 lg:px-12">
             <div :is="question.layout" :answers="question.attributes.answers" @answer="(value) => {answer = value}"></div>
 
