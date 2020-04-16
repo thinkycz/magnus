@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NewResults;
+use App\Nova\Metrics\ResultsOverTime;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Code;
@@ -65,7 +67,10 @@ class Result extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new NewResults(),
+            new ResultsOverTime()
+        ];
     }
 
     /**
