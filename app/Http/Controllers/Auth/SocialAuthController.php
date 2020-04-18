@@ -32,7 +32,7 @@ class SocialAuthController
             return redirect()->back()->with('message', 'Bạn đã có tài khoản dùng Email này. Vui lòng đăng nhập bằng mật khẩu.');
         }
 
-        auth()->login($user);
+        auth()->login($user, true);
 
         return redirect()->route('dashboard')->with('success', "Magnus chào bạn :)");
     }
