@@ -17,8 +17,19 @@
                     </svg>
                 </div>
                 <div class="flex-1 p-6 sm:p-10 sm:py-12">
-                    <h3 class="text-xl text-gray-700 font-bold mb-4">
+                    <h3 class="text-xl text-gray-700 font-bold mb-6">
                         Đăng nhập <span class="text-gray-400 font-light">vào Magnus</span></h3>
+
+                    <a href="{{ route('social_auth.facebook') }}"
+                       class="bg-blue-500 text-gray-100 hover:bg-blue-600 shadow font-bold py-3 pl-4 pr-8 rounded-full flex justify-start items-center cursor-pointer text-sm w-full my-4">
+                        <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-6"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
+                        </svg>
+                        <span class="border-l border-blue-400 h-6 w-1 block mr-1"></span>
+                        <span class="pl-3 truncate">Đăng nhập với Facebook</span>
+                    </a>
 
                     <input id="email" type="text" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mt-4 {{ $errors->has('email') ? ' border-red-500' : '' }}" placeholder="Số ĐT hoặc Email" name="email" value="{{ old('email') }}" required autofocus>
                     @if ($errors->has('email'))
