@@ -8,7 +8,7 @@
             <h1 class="my-4 font-medium mt-40 lg:mt-32 lg:mt-0 text-center w-full px-2 text-gray-800 text-2xl xl:text-4xl lg:px-0 font-black mb-8 md:w-full lg:text-left lg:-mt-4 h-auto xl:h-24 xl:leading-relaxed">
                 Hãy học cùng chúng tôi <span id="title" class="text-orange-500"></span></h1>
             <p class="mb-4 pr-36 text-normal xl:text-lg text-center w-full px-16 text-gray-600 leading-loose xl:pr-32 md:text-center md:px-32 sm:text-center lg:text-left lg:px-0">
-                Với Magnus bạn sẽ sở hữu chìa khóa mở ra cánh cửa hội nhập cùng Cộng hoà Séc</p>
+                Với M.ONLINE bởi Magnus bạn chỉ cần 5 phút mỗi ngày để học được tiếng Séc!</p>
 
             <div class="flex justify-center items-center flex-col w-full lg:w-auto">
                 <div class="max-w-5xl">
@@ -641,7 +641,7 @@
     <section class="text-center py-24 bg-green-600 relative">
         <div class="container mx-auto text-center">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Hãy đăng ký ngay</h1>
-            <h3 class="my-4 text-3xl leading-tight text-gray-300">Để truy cập sớm khi chúng tôi phát hành!</h3>
+            <h3 class="my-4 text-3xl leading-tight text-gray-300">Để truy cập hệ thống M.ONLINE và học mọi lúc - mọi nơi!</h3>
 
             <a href="{{ route('register') }}"
                class="inline-block hover:bg-gray-900 text-white mt-4 py-4 px-8 rounded-full bg-gray-800 font-bold">Đăng
@@ -656,7 +656,7 @@
 
     <script>
         var typed = new Typed('#title', {
-            strings: ["tiếng Séc dễ dàng hơn!", "cách phát âm chuẩn hơn.", "để có bằng A1 dễ hơn!"],
+            strings: ["tiếng Séc dễ dàng hơn!", "cách phát âm chuẩn hơn.", "để có bằng A1 dễ hơn!", "miễn phí mọi lúc - mọi nơi!"],
             typeSpeed: 60,
             backSpeed: 20,
             backDelay: 1500,
