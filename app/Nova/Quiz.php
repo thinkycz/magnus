@@ -23,6 +23,8 @@ class Quiz extends Resource
      */
     public static $model = \App\Quiz::class;
 
+    public static $trafficCop = false;
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
