@@ -1,7 +1,7 @@
 <header class="px-6 bg-white py-2">
     <div class="container mx-auto flex flex-wrap items-center relative">
         <div class="flex-1 flex justify-between items-center font-black text-gray-700">
-            <a href="{{ route('dashboard') }}" class="h-8">
+            <a href="{{ route('landing') }}" class="h-8">
                 <svg class="h-full mt-1" viewBox="0 0 477 105" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
                      style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><path

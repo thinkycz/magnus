@@ -5,7 +5,7 @@
 <div class="w-full z-20 pt-4">
     <div class="mx-auto container">
         <nav class="font-sans text-center md:flex justify-between py-4 overflow-hidden z-50 relative px-5 overflow-visible">
-            <a href="/"
+            <a href="{{ route('landing') }}"
                class="toggleColour text-gray-700 no-underline hover:no-underline font-bold text-2xl lg:text-4xl h-10 pb-1 flex justify-center">
                 <svg class="h-12" viewBox="0 0 477 105" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
