@@ -57,8 +57,8 @@
      attribution=setup_tool
      page_id="2105511979512882"
      theme_color="#4DBA79"
-     logged_in_greeting="Chào bạn @{{user_full_name}}, Magnus có thể giúp bạn điều gì?"
-     logged_out_greeting="Chào bạn, Magnus có thể giúp bạn điều gì?">
+     logged_in_greeting="Chào bạn{{ auth()->check() ? ' ' . auth()->user()->name : '' }}, Magnus có thể giúp bạn điều gì?"
+     logged_out_greeting="Chào bạn{{ auth()->check() ? ' ' . auth()->user()->name : '' }}, Magnus có thể giúp bạn điều gì?">
 </div>
 
 <div id="app">
