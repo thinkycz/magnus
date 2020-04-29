@@ -18,6 +18,7 @@
                     <a href="{{ route('category', 'luyen-noi-tieng-sec') }}" class="px-6 py-2 hover:bg-gray-200 whitespace-no-wrap">Luyện nói tiếng Séc</a>
                     <a href="{{ route('category', 'phat-am-tieng-sec') }}" class="px-6 py-2 hover:bg-gray-200 whitespace-no-wrap">Phát âm tiếng Séc</a>
                     <a href="{{ route('category', 'ngu-phap-tieng-sec') }}" class="px-6 py-2 hover:bg-gray-200 whitespace-no-wrap">Ngữ pháp tiếng Séc</a>
+                    <a href="{{ route('category', 'tai-lieu-cua-tt-magnus') }}" class="px-6 py-2 hover:bg-gray-200 whitespace-no-wrap">Tài liệu của TT Magnus</a>
                 </div>
             </li>
             <li class="mr-8 hidden hidden md:block">
