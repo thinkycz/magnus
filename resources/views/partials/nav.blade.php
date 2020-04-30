@@ -39,13 +39,13 @@
                     </defs></svg>
             </a>
             <ul class="text-sm text-grey-dark list-reset flex flex-col md:flex-row items-center mt-6 md:mt-0">
-                <li class="mt-4 md:mt-0 md:mr-8 group relative">
-                <span class="font-semibold text-gray-900 hover:text-orange-500 cursor-pointer">
+                <li x-data="{open: false}" class="mt-4 md:mt-0 md:mr-8 group relative">
+                <span x-on:click="open = !open" class="font-semibold text-gray-900 hover:text-orange-500 cursor-pointer">
                     Tiếng Séc Giao Tiếp
                 </span>
-
-                    <div
-                        class="absolute hidden group-hover:flex flex-col bg-white shadow rounded top-0 right-0 mt-4 py-2">
+                    <div x-show="open"
+                         x-on:click.away="open = false"
+                        class="absolute flex flex-col bg-white shadow rounded top-0 right-0 mt-6 py-2">
                         <a href="{{ route('category', 'luyen-nghe-tieng-sec') }}"
                            class="px-6 py-2 hover:bg-gray-200 whitespace-no-wrap">Luyện nghe tiếng Séc</a>
                         <a href="{{ route('category', 'luyen-noi-tieng-sec') }}"
