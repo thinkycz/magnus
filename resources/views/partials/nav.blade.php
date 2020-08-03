@@ -4,7 +4,8 @@
 <!-- Nav Bar -->
 <div class="w-full z-20 pt-4">
     <div class="mx-auto container">
-        <nav class="font-sans text-center md:flex justify-between py-4 overflow-hidden z-50 relative px-5 overflow-visible">
+        <nav
+            class="font-sans text-center md:flex justify-between py-4 overflow-hidden z-50 relative px-5 overflow-visible">
             <a href="{{ route('landing') }}"
                class="toggleColour text-gray-700 no-underline hover:no-underline font-bold text-2xl lg:text-4xl h-10 pb-1 flex justify-center">
                 <svg class="h-12" viewBox="0 0 477 105" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -40,12 +41,14 @@
             </a>
             <ul class="text-sm text-grey-dark list-reset flex flex-col md:flex-row items-center mt-6 md:mt-0">
                 <li x-data="{open: false}" class="mt-4 md:mt-0 md:mr-8 group relative">
-                <span x-on:click="open = !open" class="font-semibold text-gray-900 hover:text-orange-500 cursor-pointer">
+                <span x-on:click="open = !open"
+                      class="font-semibold text-gray-900 hover:text-orange-500 cursor-pointer">
                     Tiếng Séc Giao Tiếp
                 </span>
                     <div x-show="open"
                          x-on:click.away="open = false"
-                        class="absolute flex flex-col bg-white shadow rounded top-0 right-0 mt-6 py-2">
+                         style="display: none"
+                         class="absolute flex flex-col bg-white shadow rounded top-0 right-0 mt-6 py-2">
                         <a href="{{ route('category', 'luyen-nghe-tieng-sec') }}"
                            class="px-6 py-2 hover:bg-gray-200 whitespace-no-wrap">Luyện nghe tiếng Séc</a>
                         <a href="{{ route('category', 'luyen-noi-tieng-sec') }}"
