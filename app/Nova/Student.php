@@ -98,6 +98,8 @@ class Student extends Resource
 
                 Date::make('Birth Date')
                     ->hideFromIndex(),
+
+                Date::make('Created At')->format('D.M.Y')
             ]),
 
             new Panel('Parent Information', [
