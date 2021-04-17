@@ -584,14 +584,6 @@
                 </div>
 
                 <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
-                    <img src="{{ asset('img/leo.png') }}" alt="Long Do"
-                         class="w-48 h-48 object-cover rounded shadow-lg mb-2">
-                    <h4 class="text-lg font-semibold text-gray-800 text-center">Long Do</h4>
-                    <p class="text-sm text-gray-700 text-center font-semibold mb-1">Lập trình viên và thành viên đồng sáng lập</p>
-                    <p class="text-sm text-gray-700 text-center italic">“Hãy ngước nhìn lên cao để thấy mình còn thấp. Hãy nhìn xuống thấp để biết mình chưa cao.”</p>
-                </div>
-
-                <div class="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8">
                     <img src="{{ asset('img/julca.jpg') }}" alt="Bc. Julie Tran"
                          class="w-48 h-48 object-cover rounded shadow-lg mb-2">
                     <h4 class="text-lg font-semibold text-gray-800 text-center">Bc. Julie Tran</h4>
